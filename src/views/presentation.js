@@ -133,12 +133,6 @@ export function Presentation(props) {
                     <img src={imgBollore} alt="" />
                     <img src={imgOrange} alt="" />
                 </div>
-                <div className="partners">
-                    <img src={imgSippec} alt="" />
-                    <img src={imgBernabe} alt="" />
-                    <img src={imgBollore} alt="" />
-                    <img src={imgOrange} alt="" />
-                </div>
             </div>
         </>
     )

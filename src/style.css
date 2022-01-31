@@ -2,7 +2,7 @@
   font-family: "Gothic";
   src: url("./fonts/gothic/gothic.eot");
   src: url("./fonts/gothic/gothic.woff") format("woff"),
-    url("./fonts/gothic/gothic.ttf") format("truetype");
+  url("./fonts/gothic/gothic.ttf") format("truetype");
 }
 
 body {
@@ -16,7 +16,6 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
 /* TOPBAR - MENU */
 
 .topbar-menu {
@@ -2823,4 +2822,651 @@ hr.underliner {
   border: none;
   background: #ef8123;
   color: #ffffff;
+}
+
+nav#nav.nav {
+  display: none;
+}
+
+.mobile-nav {
+  display: none;
+}
+/* FIN DE LA PAGE CONTACT */
+
+/* RESPONSIVE DESIN 
+
+  ACCUEIL
+*/
+
+@media screen and (max-width: 480px) and (max-width: 600px) and (max-width: 780px) {
+  /* ACCUEIL RESPONSIVE */
+  .topbar-menu {
+    display: none;
+  }
+
+  .navbar-navigation {
+    justify-content: center;
+  }
+
+  .navbar-navigation > .navigation > a {
+    display: none;
+  }
+
+  .navbar-navigation > img.logo {
+    height: 58px;
+  }
+
+  header {
+    display: flex;
+    background-color: #ef8123;
+    background-image: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: start;
+    clip-path: circle(100.7% at 50% 0%);
+  }
+
+  header > .card-services {
+    position: relative;
+    padding: 0px;
+    transform: scale(0.9);
+    top: -15px;
+  }
+
+  header > .heading-info > h1 {
+    font-size: 25px;
+    text-align: center;
+  }
+
+  header > .heading-info > .stores {
+    display: none;
+  }
+
+  /* MENU MOBILE */
+  /*   
+  menuMobile {
+    background: #87cc77;
+    animation: bugfix infinite 1s;
+    -webkit-animation: bugfix infinite 1s;
+  }
+
+  @keyframes bugfix {
+    from {
+      padding: 0;
+    }
+    to {
+      padding: 0;
+    }
+  }
+  @-webkit-keyframes bugfix {
+    from {
+      padding: 0;
+    }
+    to {
+      padding: 0;
+    }
+  }
+  #overlay-button {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+    padding: 26px 11px;
+    z-index: 5;
+    cursor: pointer;
+    user-select: none;
+  }
+  #overlay-button span {
+    height: 4px;
+    width: 35px;
+    border-radius: 2px;
+    background-color: #ee8124;
+    position: relative;
+    display: block;
+    transition: all 0.2s ease-in-out;
+  }
+  #overlay-button span:before {
+    top: -10px;
+    visibility: visible;
+  }
+  #overlay-button span:after {
+    top: 10px;
+  }
+  #overlay-button span:before,
+  #overlay-button span:after {
+    height: 4px;
+    width: 35px;
+    border-radius: 2px;
+    background-color: #ee8124;
+    position: absolute;
+    content: "";
+    transition: all 0.2s ease-in-out;
+  }
+  #overlay-button:hover span,
+  #overlay-button:hover span:before,
+  #overlay-button:hover span:after {
+    background: #333332;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked ~ #overlay {
+    visibility: visible;
+  }
+  input[type="checkbox"]:checked ~ #overlay-button:hover span,
+  input[type="checkbox"]:checked ~ #overlay-button span {
+    background: transparent;
+  }
+  input[type="checkbox"]:checked ~ #overlay-button span:before {
+    transform: rotate(45deg) translate(7px, 7px);
+    opacity: 1;
+  }
+  input[type="checkbox"]:checked ~ #overlay-button span:after {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  #overlay {
+    height: 77vh;
+    width: 100vw;
+    right: 0%;
+    top: 13%;
+    background: #2a265b;
+    z-index: 2;
+    visibility: hidden;
+    position: fixed;
+  }
+  #overlay.active {
+    visibility: visible;
+  }
+  #overlay ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    padding-left: 0;
+    list-style-type: none;
+  }
+  #overlay ul li {
+    padding: 1em;
+  }
+  #overlay ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  #overlay ul li a:hover {
+    color: #333332;
+  } */
+  /* FIN MENU MOBILE */
+
+  .depannage-urgence {
+    display: none;
+  }
+
+  .bref-desc {
+    display: none;
+  }
+
+  .partners-section {
+    display: none;
+  }
+
+  .mobile-app {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+  .text-urgence {
+    display: none;
+  }
+
+  .mobile-nav {
+    background: #f1f1f1;
+    position: fixed;
+    bottom: 0;
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .bloc-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .bloc-icon img {
+    width: 45px;
+    cursor: pointer;
+  }
+
+  nav.mobile-nav > a.default > img {
+    width: 45px;
+    cursor: pointer;
+    position: relative;
+    top: 10px;
+  }
+
+  nav.mobile-nav {
+    box-shadow: 0 0 7px #ccc;
+  }
+
+  nav.mobile-nav > a.bloc-icon {
+    font-size: 10px;
+    text-decoration: none;
+    color: #2a265b;
+    font-weight: 500;
+    font-family: "Roboto";
+  }
+
+  /* FIN PAGE D'ACCUEIL */
+  /* DEBUT PAGE PRESENTATION
+
+*/
+
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  section > div.introduction img {
+    width: 180px;
+  }
+
+  section > .services > h1 {
+    font-size: 2em;
+  }
+
+  section > .services {
+    position: relative;
+    transform: scale(0.9);
+  }
+
+  .service-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 60vh;
+    padding-bottom: 70px;
+    padding-top: 50px;
+  }
+
+  .service-section > .introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    transform: scale();
+    padding-left: 10px;
+    text-align: left;
+  }
+
+  .service-section > .introduction > h1 {
+    font-size: 2em;
+  }
+
+  .service-section > .introduction > p {
+    font-size: 15px;
+  }
+
+  .service-box {
+    border: 3px solid #2a265b;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: relative;
+    box-shadow: 0 0 0 0 rgb(238 129 36);
+  }
+
+  .service-box > img.card-icon {
+    width: 100px;
+    position: absolute;
+    top: -35px;
+  }
+
+  div.service-box > p.card-title {
+    margin-top: 70px;
+    font-weight: 900;
+    font-size: 1em;
+    font-family: "gothic";
+    color: #2a265b;
+  }
+
+  .service-box > .card-next {
+    display: none;
+  }
+
+  .service-container {
+    padding: 40px 10px 24px 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-box.nth-child\(1\),
+  .service-box.nth-child\(2\),
+  .service-box.nth-child\(5\),
+  .service-box.nth-child\(6\) {
+    margin-bottom: 50px;
+  }
+
+  div.service-box.nth-child\(6\) img.card-icon {
+    width: 45px;
+  }
+
+  div.service-box.nth-child\(4\) img.card-icon {
+    width: 45px;
+  }
+
+  .about-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .inner-content > h1 {
+    margin-top: 40px;
+    font-size: 2em;
+  }
+
+  .about-wrapper > .inner-content {
+    padding: 15px;
+  }
+
+  .about-wrapper > .inner-content > p {
+    color: #968a8a;
+    font-size: 1em;
+  }
+
+  .inner-content > a {
+    color: gray;
+  }
+
+  .partners {
+    display: grid;
+    grid-template-rows: (3, 1fr);
+  }
+
+  .about-wrapper > img {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 210px;
+  }
+
+  .partners-container > h2 {
+    font-family: "gothic";
+    font-weight: bold;
+    font-size: 2em;
+    margin-top: 130px;
+  }
+
+  .partners-container {
+    display: flex;
+    padding: 70px 25px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 7px #aaa;
+  }
+  .partners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .partners > img {
+    margin: 15px;
+    width: 90px;
+  }
+
+  /* FIN RESPONSIVE ENTREPRISE */
+
+  /* DEBUT RESPONSIVE PAGE ENTREPRISE */
+  block {
+    min-height: calc(92vh - 310px);
+    background-color: #2a265b;
+    background-image: none;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 20px;
+  }
+
+  block > .entre-text > h1 {
+    color: #ffffff;
+    font-family: "Roboto", "sans-serif";
+    font-weight: 900;
+    font-size: 2em;
+  }
+
+  .service-entreprise {
+    display: none;
+  }
+  .tutorial {
+    padding: 0 20px;
+  }
+
+  .tutorial > .heading > h4 {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 8px;
+    text-align: center;
+  }
+
+  .tutorial > h1 {
+    margin: 0;
+    font-family: "Roboto";
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 100;
+    margin: 0px;
+  }
+
+  .tutorial > p {
+    text-align: center;
+  }
+
+  .steps > .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100px;
+    margin: 70px 50px;
+    text-align: center;
+  }
+
+  .steps > .step > .img-warpper > img.step-img {
+    max-width: 60px;
+    width: 100%;
+  }
+
+  .steps > hr.arrow-bar {
+    display: none;
+  }
+
+  .steps > .step > .img-warpper > img.right {
+    display: none;
+  }
+
+  /* FIN PAGE ENTREPRISE */
+
+  /* DEBUT PAGE CONTACT */
+
+  .contact-box > .contact-info {
+    display: none;
+  }
+
+  .contact-form {
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: white;
+    padding: 40px;
+    margin: 10px;
+    border-radius: 15px;
+    width: 80%;
+  }
+
+  .socials > .networks {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    left: 30px;
+  }
+
+  /* FIN DE PAGE RESPONSIVE CONTACT */
+
+  /* DEBUT DE PAGE DETAILS SERVICE RESPONSIVE  */
+  .description-service {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 100%;
+    padding: 50px 0;
+  }
+
+  .description-service > .title-section > p {
+    font-size: 1.3em;
+    text-align: left;
+    margin-top: 0;
+    font-size: 15px;
+  }
+
+  .coordinates {
+    border: 3px solid #f1f1f1;
+    padding: 20px;
+    border-radius: 3px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-start;
+  }
+
+  .coordinates > h2 {
+    font-weight: bolder;
+    color: #2a265b;
+    font-family: "Roboto";
+    font-size: 16px;
+  }
+
+  .steps-wrapper {
+    display: none;
+  }
+
+  .coordinates > form > span > h2 {
+    position: relative;
+    left: 65%;
+    font-weight: bold;
+    color: #ef8123;
+    bottom: 35px;
+    font-size: 18px;
+  }
+
+  .description-service {
+    overflow: hidden;
+  }
+
+  .description-service > .title-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    width: 75%;
+  }
+
+  .description-service > .title-section > p {
+    font-size: 0.9em !important;
+  }
+
+  .coordinates > form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.formulary > div.coordinates > form {
+    width: 75%;
+  }
+
+  div.formulary > div.coordinates > form > span {
+    font-size: 12px;
+  }
+
+  div.coordinates > div.accept-acount > h2 {
+    font-size: 19px;
+  }
+
+  div.personnal-container
+    > div.form-personnal
+    > div.coordinates
+    > form
+    > input {
+    width: 120%;
+  }
+
+  div.personnal-container > div.form-personnal > div.coordinates {
+    overflow: hidden;
+  }
+
+  div.personnal-container
+    > div.form-personnal
+    > div.coordinates
+    > form
+    > div.validate
+    > button {
+    position: relative;
+    left: 20%;
+  }
+
+  div.personnal-container
+    > div.form-personnal
+    > div.coordinates
+    > form
+    > img.checkbox {
+    position: relative;
+    left: 20%;
+  }
+
+  div.form-personnal > div.coordinates > form > span {
+    font-size: 12px;
+  }
+
+  div.form-personnal > div.coordinates > form > span > h2 {
+    position: relative;
+    left: 103%;
+    font-weight: bold;
+    color: #ef8123;
+    bottom: 35px;
+    font-size: 18px;
+  }
 }
