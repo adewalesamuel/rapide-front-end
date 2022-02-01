@@ -52,9 +52,9 @@ export function Footer(props) {
                     <img src={imgHome} alt="" />
                     Accueil
                 </Link>
-                <Link to="/services" className="bloc-icon">
+                <Link to="/entreprise" className="bloc-icon">
                     <img src={imgUrgence} alt="" />
-                    Urgence
+                    Entreprise
                 </Link>
                 <Link to="#" className="bloc-icon">
                     <img src={imgAccount} alt="" />

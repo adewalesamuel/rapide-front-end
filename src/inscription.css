@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Gothic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Gothic"), url("./fonts/gothic/gothic.woff") format("woff");
+}
+
+*{font-family: "Gothic" !important;}
+
+.col-50 {
+  width: 50%;
+}
+
+body {
+  font-family: "Gothic";
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  font-family: "Gothic";
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.Inscription {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.Inscription .logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.Inscription .logo img {
+  width: 8rem;
+}
+
+.Inscription .img-container {
+  background-color: grey;
+  height: 100%;
+}
+
+.Inscription .img-container .bg-img {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+
+.Inscription .form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.Inscription .form-container .form{
+  max-width: 600px;
+}

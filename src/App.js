@@ -17,6 +17,7 @@ function App() {
         <Route exact path='/presentation' element={<Views.Presentation />} />
         <Route exact path='/entreprise' element={<Views.Entreprise />} />
         <Route exact path='/services' element={<Views.Services />} />
+        <Route exact path='/inscription' element={<Views.Inscription />} />
         <Route exact path='/commandes/:id' element={<Views.Commande />} />
       </Routes>
       <Components.Footer />

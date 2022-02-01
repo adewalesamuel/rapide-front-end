@@ -3,7 +3,8 @@ import { Presentation } from "./presentation";
 import { Entreprise } from "./entreprise";
 import { Services } from "./services";
 import { Commande } from "./commande"; 
-import Contact from "../components/contact";
+import { Contact } from "./contact";
+import Inscription from "./inscription";
 
 export const Views = {
     Acceuil,
@@ -11,5 +12,6 @@ export const Views = {
     Entreprise,
     Services,
     Commande,
-    Contact
+    Contact,
+    Inscription
 }

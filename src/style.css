@@ -2838,6 +2838,23 @@ nav#nav.nav {
   ACCUEIL
 */
 
+.register-form-container {
+  display: block;
+  max-width: 500px;
+  margin: auto
+}
+
+.register-form-container form {
+  display: inline-block !important;
+  width: 100%;
+}
+
+.register-form-container form input {
+  width: 100%;
+  margin-top: 1rem;
+  box-sizing: border-box;
+}
+
 @media screen and (max-width: 480px) and (max-width: 600px) and (max-width: 780px) {
   /* ACCUEIL RESPONSIVE */
   .topbar-menu {

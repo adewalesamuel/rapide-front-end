@@ -13,7 +13,7 @@ export function NavBar(props) {
                 <Link to='/services'>Dépanage d'urgence</Link>
                 <Link to='/contact'>Contact</Link>
                 <Link className="marketpalce" to="#">Marketpalce</Link>
-                <Link className="login" to="#">Inscription</Link>
+                <Link className="login" to="/inscription">Inscription</Link>
             </div>
         </div>
     )
