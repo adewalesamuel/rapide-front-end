@@ -108,16 +108,16 @@ export function Presentation(props) {
                         
                         <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
-                        <a className="links" href="#" style={{color: "#EF8123"}}>
+                        <Link className="links" to="#" style={{color: "#EF8123"}}>
                             <img src={imgRight} alt="alt" width="30px" />
                             &nbsp; Plaquette de Présentation
-                        </a>
+                        </Link>
 
-                        <a className="links" href="#">
+                        <Link className="links" to="#">
                             <img src={imgRight} alt="alt" width="30px" />
                             &nbsp; 
                             Matrice de Prix
-                        </a>
+                        </Link>
                     </div>
 
                     <img src={imgBooks} alt="" />

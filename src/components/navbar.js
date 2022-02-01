@@ -12,8 +12,8 @@ export function NavBar(props) {
                 <Link to='/services'>Services</Link>
                 <Link to='/services'>Dépanage d'urgence</Link>
                 <Link to='/contact'>Contact</Link>
-                <a className="marketpalce" href="#">Marketpalce</a>
-                <a className="login" href="#">Inscription</a>
+                <Link className="marketpalce" to="#">Marketpalce</Link>
+                <Link className="login" to="#">Inscription</Link>
             </div>
         </div>
     )

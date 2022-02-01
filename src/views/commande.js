@@ -184,7 +184,6 @@ export function Commande(props) {
         Services.Commande.create(JSON.stringify(payload), abortController.signal)
         .then(result => {
             setIsLoading(false);
-            console.log(result)
             setStep(4);
         })
         .catch(err => {
@@ -204,6 +203,7 @@ export function Commande(props) {
         return () => {
             abortController.abort();
         };
+        // eslint-disable-next-line
      }, [])
 
     return (

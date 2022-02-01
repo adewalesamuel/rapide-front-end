@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
 export function Entreprise(props) {
     return (
         <> 
-        <block>
+        <section className='block'>
             <div className="entre-text">
                 <h1>Nous offrons les meilleurs services a domicile.</h1>
                 <p>Un dépannage, c’est une affaire de confiance : le travail doit être bien fait, sans mauvaise surprise à la fin, ni les jours suivants.</p>
@@ -50,7 +50,7 @@ export function Entreprise(props) {
                         <button type="submit">VALIDER</button>
                     </form>
                 </div>
-        </block>
+        </section>
 
         <div className="service-entreprise">
 
@@ -155,16 +155,16 @@ export function Entreprise(props) {
                     
                     <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
-                    <a className="links" href="#" style={{color: '#EF8123'}}>
+                    <Link className="links" to="#" style={{color: '#EF8123'}}>
                         <img src={imgRight} alt="alt" width="30px" />
                         &nbsp; Plaquette de Présentation
-                    </a>
+                    </Link>
 
-                    <a className="links" href="#">
+                    <Link className="links" to="#">
                         <img src={imgRight} alt="alt" width="30px" />
                         &nbsp; 
                         Matrice de Prix
-                    </a>
+                    </Link>
                 </div>
 
                 <img src={imgBooks} alt="" />

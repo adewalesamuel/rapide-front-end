@@ -7,9 +7,9 @@ import imgYoutube from '../img/youtube.png';
 export default function Contact() {
     return (
         <>
-            <contactSection>
+            <section className='contactSection'>
                 <h1>Contactez - Nous</h1>
-            </contactSection>
+            </section>
 
             <div className="contact-container">
 
@@ -64,7 +64,7 @@ export default function Contact() {
             </div>
             
             <div className="about-us">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.53
+                <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3319.53
                 30479648983!2d-3.979605416963003!3d5.342682372228755!2m3!1f0!2f0!3f0!3m2!1i
                 1024!2i768!4f13.1!3m3!1m2!1s0xfc1f111bac5bd87%3A0xbde4f242deef9cc0!2sRapid
                 e%20Reparation!5e0!3m2!1sen!2sci!4v1629711534768!5m2!1sen!2sci" width="100%" 

@@ -26,8 +26,8 @@ export function Paiement({state, method}) {
 
             <div className="accept-acount">
                 <h2 style={{color: '#968A8A'}}>Recapitulatif du cout du Dépanage: 
-                    <span style={{color: '#ef8123'}} >{state.services.find(service => service.id == parseInt(state.serviceId)) ? 
-                    state.services.find(service => service.id == parseInt(state.serviceId)).prix : ""} Fcfa</span>
+                    <span style={{color: '#ef8123'}} >{state.services.find(service => service.id === parseInt(state.serviceId)) ? 
+                    state.services.find(service => service.id === parseInt(state.serviceId)).prix : ""} Fcfa</span>
                 </h2>
             </div>
 
@@ -40,7 +40,7 @@ export function Paiement({state, method}) {
                 </select>
                 
                 <img className="checkbox" style={{marginRight: '30px', width: "180px", height: 'auto'}} 
-                src={imgCash} />
+                src={imgCash} alt=""/>
 
                 <div className="validate" style={{gridColumn: '1/3', display: "flex", alignItems: 'center', 
                 justifyContent:'center'}}>

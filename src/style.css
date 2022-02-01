@@ -1245,7 +1245,7 @@ body {
 
 /* BLOCK */
 
-block {
+.block {
   min-height: calc(100vh - 350px);
   background-image: url("./img/entre-bg.png");
   background-position: center;
@@ -1255,14 +1255,14 @@ block {
   padding: 0 40px;
 }
 
-block > .entre-text > h1 {
+.block > .entre-text > h1 {
   color: #ffffff;
   font-family: "Roboto", "sans-serif";
   font-weight: 900;
   font-size: 3em;
 }
 
-block > .entre-text {
+.block > .entre-text {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -1270,7 +1270,7 @@ block > .entre-text {
   justify-content: center;
 }
 
-block > .entre-text > p {
+.block > .entre-text > p {
   color: #ffffff;
   font-weight: 400;
   font-size: 1.3em;
@@ -1278,7 +1278,7 @@ block > .entre-text > p {
   margin: 0;
 }
 
-block > .entre-text > a.btn {
+.block > .entre-text > a.btn {
   color: #ffffff;
   background: #ef8123;
   border: 1px solid #ffca9b;
@@ -1291,7 +1291,7 @@ block > .entre-text > a.btn {
   padding: 5px 15px;
 }
 
-block > .entre-text > .stores {
+.block > .entre-text > .stores {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -1299,24 +1299,24 @@ block > .entre-text > .stores {
   justify-content: flex-start;
 }
 
-block > .entre-text > .stores > img {
+.block > .entre-text > .stores > img {
   height: 65px;
   margin-right: 10px;
 }
 
-block > .services {
+.block > .services {
   position: relative;
   padding: 0px;
   transform: scale(0.8);
 }
 
-block > .services > img.main {
+.block > .services > img.main {
   width: 100%;
   position: relative;
   z-index: 10;
 }
 
-block > .services > img.service {
+.block > .services > img.service {
   position: absolute;
   width: 20%;
   z-index: 100;
@@ -1325,37 +1325,37 @@ block > .services > img.service {
   padding: 0;
 }
 
-block > .services > img.service-1 {
+.block > .services > img.service-1 {
   top: 0%;
   left: 28%;
 }
 
-block > .services > img.service-2 {
+.block > .services > img.service-2 {
   top: 9%;
   right: 7%;
 }
 
-block > .services > img.service-3 {
+.block > .services > img.service-3 {
   top: 40%;
   right: -8%;
 }
 
-block > .services > img.service-4 {
+.block > .services > img.service-4 {
   bottom: 10%;
   right: 5%;
 }
 
-block > .services > img.service-5 {
+.block > .services > img.service-5 {
   bottom: 0;
   right: 44%;
 }
 
-block > .services > img.service-6 {
+.block > .services > img.service-6 {
   bottom: 18%;
   left: 0;
 }
 
-block > .services > img.service-7 {
+.block > .services > img.service-7 {
   top: 25%;
   left: -5%;
 }
@@ -2461,7 +2461,7 @@ body {
 }
 
 /* CONTACT SECTION */
-contactSection {
+.contactSection {
   min-height: calc(60vh);
   background-image: url("./img/cover.png");
   background-position: center;
@@ -2473,11 +2473,11 @@ contactSection {
   padding: 0 40px;
 }
 
-contactSection > h1 {
+.contactSection > h1 {
   font-size: 50px;
 }
 
-contactSection > .contact-info {
+.contactSection > .contact-info {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -2485,14 +2485,14 @@ contactSection > .contact-info {
   justify-content: center;
 }
 
-contactSection > .contact-info > h1 {
+.contactSection > .contact-info > h1 {
   color: #272a61;
   font-family: "Roboto", "sans-serif";
   font-weight: 900;
   font-size: 30px;
 }
 
-contactSection > .contact-info > .stores {
+.contactSection > .contact-info > .stores {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -2500,24 +2500,24 @@ contactSection > .contact-info > .stores {
   justify-content: flex-start;
 }
 
-contactSection > .contact-info > .stores > img {
+.contactSection > .contact-info > .stores > img {
   height: 65px;
   margin-right: 10px;
 }
 
-contactSection > .services {
+.contactSection > .services {
   position: relative;
   padding: 0px;
   transform: scale(0.8);
 }
 
-contactSection > .services > img.main {
+.contactSection > .services > img.main {
   width: 100%;
   position: relative;
   z-index: 10;
 }
 
-contactSection > .services > img.service {
+.contactSection > .services > img.service {
   position: absolute;
   width: 20%;
   z-index: 100;
@@ -2526,17 +2526,17 @@ contactSection > .services > img.service {
   padding: 0;
 }
 
-contactSection > .services > img.service-1 {
+.contactSection > .services > img.service-1 {
   top: 0%;
   left: 28%;
 }
 
-contactSection > .services > img.service-2 {
+.contactSection > .services > img.service-2 {
   top: 9%;
   right: 7%;
 }
 
-contactSection > .services > img.service-3 {
+.contactSection > .services > img.service-3 {
   top: 40%;
   right: -8%;
 }
@@ -2546,17 +2546,17 @@ header > .services > img.service-4 {
   right: 5%;
 }
 
-contactSection > .services > img.service-5 {
+.contactSection > .services > img.service-5 {
   bottom: 0;
   right: 44%;
 }
 
-contactSection > .services > img.service-6 {
+.contactSection > .services > img.service-6 {
   bottom: 18%;
   left: 0;
 }
 
-contactSection > .services > img.service-7 {
+.contactSection > .services > img.service-7 {
   top: 25%;
   left: -5%;
 }
@@ -2863,7 +2863,7 @@ nav#nav.nav {
     flex-direction: column;
     justify-content: flex-start;
     align-content: flex-start;
-    align-items: start;
+    align-items: flex-start;
     clip-path: circle(100.7% at 50% 0%);
   }
 
@@ -2922,7 +2922,7 @@ nav#nav.nav {
     border-radius: 2px;
     background-color: #ee8124;
     position: relative;
-    display: block;
+    display: .block;
     transition: all 0.2s ease-in-out;
   }
   #overlay-button span:before {
@@ -3236,7 +3236,7 @@ nav#nav.nav {
   /* FIN RESPONSIVE ENTREPRISE */
 
   /* DEBUT RESPONSIVE PAGE ENTREPRISE */
-  block {
+  .block {
     min-height: calc(92vh - 310px);
     background-color: #2a265b;
     background-image: none;
@@ -3248,7 +3248,7 @@ nav#nav.nav {
     padding: 0 20px;
   }
 
-  block > .entre-text > h1 {
+  .block > .entre-text > h1 {
     color: #ffffff;
     font-family: "Roboto", "sans-serif";
     font-weight: 900;
@@ -3368,7 +3368,7 @@ nav#nav.nav {
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     justify-content: flex-start;
   }
 

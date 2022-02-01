@@ -67,8 +67,8 @@ export function CommandeForm({state, method}) {
 
                 {state.serviceId ?
                     <span style={{color: "#968A8A"}}>Estimation Total du Dépanage : 
-                    <h2>{state.services.find(service => service.id == parseInt(state.serviceId)) ? 
-                    state.services.find(service => service.id == parseInt(state.serviceId)).prix : ""} Fcfa</h2></span>
+                    <h2>{state.services.find(service => service.id === parseInt(state.serviceId)) ? 
+                    state.services.find(service => service.id === parseInt(state.serviceId)).prix : ""} Fcfa</h2></span>
                     : null
                 }
 

@@ -6,10 +6,11 @@ import {Services as ApiSerivices} from '../services';
 import imgRightArrow from '../img/right-arrow.png'
 
 export function Services(props) {
-    const abortController = new AbortController();
     let [categories, setCategories] = useState([]);
 
     useEffect(() => {
+        const abortController = new AbortController();
+
         if (categories.length > 0) return;
         ApiSerivices.Categorie.getAll(abortController.signal)
         .then(result => setCategories(result.data))
@@ -18,7 +19,7 @@ export function Services(props) {
         return () => {
             abortController.abort();
         }
-    }, [])
+    }, [categories])
 
     function renderImgFromName(imgName) {
         try {

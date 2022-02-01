@@ -116,8 +116,8 @@ export function Acceuil(props) {
                         </h2>
 
                         <div className="stores">
-                            <a href="#"><img src={imgPlaystore} alt="" /></a>
-                            <a href="#"><img src={imgAppstore} alt="" /></a>
+                            <Link to="#"><img src={imgPlaystore} alt="" /></Link>
+                            <Link to="#"><img src={imgAppstore} alt="" /></Link>
                         </div>
                     </div>
             

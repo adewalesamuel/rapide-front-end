@@ -11,7 +11,7 @@ export function CommandeFin({state, method}) {
 
             <form action="#">
                 <img className="checkbox" style={{marginTop: '30px', width: "100px", height: 'auto'}} 
-                src={checkImg} />
+                src={checkImg} alt=""/>
 
                 <div className="validate" style={{gridColumn: '1/3', display: "flex", alignItems: 'center', 
                 justifyContent:'center'}}>

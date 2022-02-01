@@ -57,8 +57,8 @@ export function UserForm({state, method}) {
                     }
 
                 <span style={{color:"#968A8A"}}>Recapitulatif du cout du Dépanage : 
-                    <h2>{state.services.find(service => service.id == parseInt(state.serviceId)) ? 
-                    state.services.find(service => service.id == parseInt(state.serviceId)).prix : ""} Fcfa</h2>
+                    <h2>{state.services.find(service => service.id === parseInt(state.serviceId)) ? 
+                    state.services.find(service => service.id === parseInt(state.serviceId)).prix : ""} Fcfa</h2>
                 </span>
 
                     
