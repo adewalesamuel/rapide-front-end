@@ -1,3 +1,5 @@
+import { Components } from ".";
+
 export function UserForm({state, method}) {
     return (
         <>
@@ -56,13 +58,7 @@ export function UserForm({state, method}) {
                     </>
                     }
 
-                <span style={{color:"#968A8A"}}>Recapitulatif du cout du Dépanage : 
-                    <h2>{state.services.find(service => service.id === parseInt(state.serviceId)) ? 
-                    state.services.find(service => service.id === parseInt(state.serviceId)).prix : ""} Fcfa</h2>
-                </span>
-
-                    
-
+                <Components.coutDepannage state={state}/>
 
                 <div className="validate" 
                 style={{gridColumn: "1/3", display:"flex", alignItems:"center", justifyContent:'center'}}>

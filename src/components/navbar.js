@@ -12,7 +12,8 @@ export function NavBar(props) {
                 <Link to='/services'>Services</Link>
                 <Link to='/services'>Dépanage d'urgence</Link>
                 <Link to='/contact'>Contact</Link>
-                <Link className="marketpalce" to="#">Marketpalce</Link>
+                <a className="marketpalce" href="https://marketplace.rapide-reparation.com/" 
+                target={'_blank'} rel="noreferrer">Marketpalce</a>
                 <Link className="login" to="/inscription">Inscription</Link>
             </div>
         </div>

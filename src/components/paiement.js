@@ -1,3 +1,4 @@
+import { Components } from '.';
 import imgCash from '../img/cash2.png'
 export function Paiement({state, method}) {
     return (
@@ -24,11 +25,8 @@ export function Paiement({state, method}) {
                 <hr className="divider-step" />
             </div>
 
-            <div className="accept-acount">
-                <h2 style={{color: '#968A8A'}}>Recapitulatif du cout du Dépanage: 
-                    <span style={{color: '#ef8123'}} >{state.services.find(service => service.id === parseInt(state.serviceId)) ? 
-                    state.services.find(service => service.id === parseInt(state.serviceId)).prix : ""} Fcfa</span>
-                </h2>
+            <div className='accept-account'>
+                <Components.coutDepannage state={state}/>
             </div>
 
 

@@ -1,3 +1,5 @@
+import { Components } from ".";
+
 export function CommandeForm({state, method}) {
     return (
         <>
@@ -58,7 +60,7 @@ export function CommandeForm({state, method}) {
                         })}
                 </select>
 
-                <input type="number" name="quantite" value={state.quantite} placeholder="Quantité" 
+                <input type="number" name="quantite" value={state.quantite} min={1} placeholder="Quantité" 
                 onChange={(event) => method.setQuantite(event.target.value)}/> 
                 <input type="text" name="lieu" value={state.lieu} placeholder="Adresse de depannage" 
                 onChange={(event) => method.setLieu(event.target.value)}/>
@@ -66,9 +68,7 @@ export function CommandeForm({state, method}) {
                 style={{visibility: 'hidden'}}/>
 
                 {state.serviceId ?
-                    <span style={{color: "#968A8A"}}>Estimation Total du Dépanage : 
-                    <h2>{state.services.find(service => service.id === parseInt(state.serviceId)) ? 
-                    state.services.find(service => service.id === parseInt(state.serviceId)).prix : ""} Fcfa</h2></span>
+                    <Components.coutDepannage state={state}/>
                     : null
                 }
 

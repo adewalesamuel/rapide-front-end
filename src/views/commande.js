@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import {Services} from '../services';
 
 import { Components } from '../components';
@@ -9,6 +9,7 @@ export function Commande(props) {
     const abortController = new AbortController();
     const params = useParams();
     const userType = "client";
+    const [searchParams, setSearchParams] = useSearchParams();
 
     let [hasAccount, setHasAccount] = useState(false); 
     let [sousCategories, setSousCategories] = useState([]);
@@ -28,6 +29,7 @@ export function Commande(props) {
     let [cPassword, setCpassword] = useState("");
     let [userId, setUserId] = useState("");
     let [isLoading, setIsLoading] = useState(false);
+    let [isUrgent, setIsUrgent] = useState(false);
 
     let state = {
         sousCategories,
@@ -45,7 +47,8 @@ export function Commande(props) {
         cPassword,
         isLoading,
         hasAccount,
-        categorie
+        categorie,
+        isUrgent
     };
     let method = {
         setPrestationId,
@@ -175,6 +178,7 @@ export function Commande(props) {
         const payload = {
             'service_id':serviceId,
             'utilisateur_id':userId,
+            'is_urgent': isUrgent,
             quantite,
             lieu,
             description,
@@ -193,12 +197,25 @@ export function Commande(props) {
     }
 
     useEffect(() => {
-        Services.Categorie.getById(params.id, abortController.signal)
-        .then(result => setCategorie(result.data))
-        .catch(err => console.log(err))
-        Services.Categorie.getAllSousCategorie(params.id, abortController.signal)
-        .then(result => setSousCategories(result.data))
-        .catch(err => console.log(err));
+        if (searchParams.get('service_id') && searchParams.get('lieu') && searchParams.get('quantite')) {
+            setServiceId(searchParams.get('service_id'))
+            setLieu(searchParams.get('lieu'))
+            setQuantite(searchParams.get('quantite'))
+            setIsUrgent(true)
+            setStep(2)
+            Services.Service.getById(searchParams.get('service_id'))
+            .then(result => setServices([result.data]))
+            .catch(err => console.log(err))
+        }
+
+        if (params.id) {
+            Services.Categorie.getById(params.id, abortController.signal)
+            .then(result => setCategorie(result.data))
+            .catch(err => console.log(err))
+            Services.Categorie.getAllSousCategorie(params.id, abortController.signal)
+            .then(result => setSousCategories(result.data))
+            .catch(err => console.log(err));
+        }
 
         return () => {
             abortController.abort();
@@ -210,8 +227,8 @@ export function Commande(props) {
         <div className="detail-service">
 
             <div className="description-service">
-
-                <div className="title-section">
+                {step === 1? 
+                 <div className="title-section">
                     <h1>{categorie.nom}</h1>
                     <hr className="underliner" />
 
@@ -229,6 +246,7 @@ export function Commande(props) {
                         })}
                     </ul>
                 </div>
+                :null}
 
                 <div className="formulary">
                     <div className="coordinates">

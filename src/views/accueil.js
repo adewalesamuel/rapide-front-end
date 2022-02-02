@@ -8,15 +8,29 @@ import imgPainting from '../img/painting.png'
 import imgCarpentry from '../img/carpentry.png'
 import imgJardinage from '../img/jardinage.png'
 import imgMain from '../img/main.png'
-import imgCaretDown from '../img/caret-down.png'
 import imgMobile2 from '../img/mobile2.png'
 import imgSippec from '../img/sippec.png'
 import imgBernabe from '../img/bernabe.png'
 import imgBollore from '../img/bollore.png'
 import imgOrange from '../img/orange.png'
 import { Link } from 'react-router-dom'
+import {useState, useEffect} from 'react';
+import { Services } from '../services';
+import { DepannageRapideForm } from '../components/depannageRapideForm'
 
 export function Acceuil(props) {
+    const abortController = new AbortController();
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+      Services.Categorie.getAll(abortController.signal)
+      .then(result => setCategories(result.data))
+      .catch(err => console.log(err));
+    
+    }, []);
+    
+
     return (
         <>
             <header>
@@ -53,43 +67,7 @@ export function Acceuil(props) {
                         </p>
                     </div>
             
-                    <div className="urgence-form">
-                        <form action="/services">
-                            <h3>Dépannage Rapide</h3>
-            
-                            <div className="select-group">
-                                <img className="option-carret" src={imgCaretDown} alt="" />
-                                <select name="type" id="type">
-                                    <option value="">-- Type de depanage --</option>
-                                    <option value="">Normal</option>
-                                    <option value="">Urgence</option>
-                                </select>
-                            </div>
-                            
-                            <div className="form-group">
-                                <input type="text" placeholder="Services" />
-                            </div>
-                            
-                            <div className="form-group">
-                                <input type="number" placeholder="Sous-service" />
-                            </div>
-                            
-                            <div className="form-group">
-                                <input type="text" placeholder="Quantité" />
-                            </div>
-                            
-                            <div className="form-group">
-                                <input type="text" placeholder="Text" />
-                            </div>
-                            
-                            <div className="form-group">
-                                <input type="text" placeholder="Test" />
-                            </div>
-                            <button type="submit">
-                                VALIDER
-                            </button>
-                        </form>
-                    </div>
+                    <DepannageRapideForm  categories={categories}/>
                 </div>
             </div>
             

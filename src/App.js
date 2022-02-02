@@ -19,6 +19,7 @@ function App() {
         <Route exact path='/services' element={<Views.Services />} />
         <Route exact path='/inscription' element={<Views.Inscription />} />
         <Route exact path='/commandes/:id' element={<Views.Commande />} />
+        <Route exact path='/commandes' element={<Views.Commande />} />
       </Routes>
       <Components.Footer />
     </BrowserRouter>

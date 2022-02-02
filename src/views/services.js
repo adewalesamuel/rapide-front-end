@@ -24,7 +24,7 @@ export function Services(props) {
     function renderImgFromName(imgName) {
         try {
             const imgSlug = imgName.toLowerCase().replace(/ /g, '_')
-            .replace(/é/g, 'e').replace(/ç/g, 'e');
+            .replace(/é/g, 'e').replace(/ç/g, 'c');
             const img = require('../img/ic_' + imgSlug + '.png');
             return <img className="card-icon" src={img} alt={imgName}/>;
         } catch (error) {
