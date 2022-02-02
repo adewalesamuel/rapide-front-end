@@ -26,7 +26,7 @@ export function Paiement({state, method}) {
             </div>
 
             <div className='accept-account'>
-                <Components.coutDepannage state={state}/>
+                <Components.CoutDepannage state={state}/>
             </div>
 
 

@@ -899,7 +899,7 @@ section > .services > img.service-7 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-direction: row;
+  flex-flow: row wrap;
 }
 
 .service-container.centered {
@@ -948,6 +948,7 @@ section > .services > img.service-7 {
   background-color: white;
   position: relative;
   box-shadow: 0 0 0 0 rgba(238, 129, 36);
+  margin-bottom: 7%;
   /* -webkit-animation: pulseboxservice 2s infinite cubic-bezier(0.66, 0, 0, 1);
     -moz-animation: pulseboxservice 2s infinite cubic-bezier(0.66, 0, 0, 1);
     -ms-animation: pulseboxservice 2s infinite cubic-bezier(0.66, 0, 0, 1);

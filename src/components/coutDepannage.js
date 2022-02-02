@@ -1,4 +1,4 @@
-export function coutDepannage({state}) {
+export function CoutDepannage({state}) {
     const service = state.services.find(service => service.id === parseInt(state.serviceId));
     if (service){
         if (service.prix > 0) {
@@ -14,5 +14,7 @@ export function coutDepannage({state}) {
                 </span>
             )
         }
+    }else {
+        return null;
     }
 }

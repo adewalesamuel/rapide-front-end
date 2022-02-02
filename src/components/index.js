@@ -5,7 +5,8 @@ import { UserForm } from "./userForm";
 import { Paiement } from "./paiement";
 import { CommandeFin } from "./commandeFin";
 import { DepannageRapideForm } from "./depannageRapideForm";
-import { coutDepannage } from "./coutDepannage";
+import { CoutDepannage } from "./coutDepannage";
+import { ServiceBox } from "./serviceBox";
 
 export const Components = {
     Header,
@@ -14,6 +15,7 @@ export const Components = {
     UserForm,
     Paiement,
     CommandeFin,
-    coutDepannage,
-    DepannageRapideForm
+    CoutDepannage,
+    DepannageRapideForm,
+    ServiceBox
 }

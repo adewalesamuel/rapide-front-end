@@ -16,7 +16,7 @@ import imgOrange from '../img/orange.png'
 import { Link } from 'react-router-dom'
 import {useState, useEffect} from 'react';
 import { Services } from '../services';
-import { DepannageRapideForm } from '../components/depannageRapideForm'
+import { Components } from '../components'
 
 export function Acceuil(props) {
     const abortController = new AbortController();
@@ -67,7 +67,7 @@ export function Acceuil(props) {
                         </p>
                     </div>
             
-                    <DepannageRapideForm  categories={categories}/>
+                    <Components.DepannageRapideForm  categories={categories}/>
                 </div>
             </div>
             

@@ -68,7 +68,7 @@ export function CommandeForm({state, method}) {
                 style={{visibility: 'hidden'}}/>
 
                 {state.serviceId ?
-                    <Components.coutDepannage state={state}/>
+                    <Components.CoutDepannage state={state}/>
                     : null
                 }
 

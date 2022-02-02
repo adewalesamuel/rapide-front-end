@@ -1,4 +1,3 @@
-import imgCaretDown from '../img/caret-down.png'
 import imgICEl from '../img/ic_el.png'
 import imgICAir from '../img/ic_air.png'
 import imgICPaint from '../img/ic_paint.png'
@@ -10,6 +9,7 @@ import imgSelection from '../img/selection.png'
 import imgCart from '../img/cart.png'
 import imgBooks from '../img/books.png'
 import { Link } from 'react-router-dom'
+import { Components } from '../components'
 
 export function Entreprise(props) {
     return (
@@ -21,35 +21,7 @@ export function Entreprise(props) {
 
                 <Link className="btn" to="/presentation">QUI SOMMES NOUS ?</Link>
             </div>
-
-            <div className="depannage-urg">
-                    <form action="/services">
-                        <h3>Dépannage Rapide</h3>
-        
-                        <div className="select-group">
-                            <img className="option-carret" src={imgCaretDown} alt="" />
-                            <select name="type" id="type">
-                                <option value="">-- Type de depanage --</option>
-                                <option value="">Normal</option>
-                                <option value="">Urgence</option>
-                            </select>
-                        </div>
-
-                        <div className="form-group">
-                            <input type="text" placeholder="Sous-Service" />
-                        </div>
-                        
-                        <div className="form-group">
-                            <input type="number" placeholder="Quantite" />
-                        </div>
-                        
-                        <div className="form-group">
-                            <input type="text" placeholder="Test" />
-                        </div>
-        
-                        <button type="submit">VALIDER</button>
-                    </form>
-                </div>
+            <Components.DepannageRapideForm  classname="depannage-urg"/>
         </section>
 
         <div className="service-entreprise">

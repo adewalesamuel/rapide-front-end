@@ -1,14 +1,26 @@
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { Services } from '../services';
 
 export function DepannageRapideForm(props) {
     const abortController = new AbortController();
-    const [categorieId, setCategorieId] = useState("");
+
+    const [categories, setCategories] = useState([]);
     const [sousCategories, setSousCategories] = useState([]);
     const [prestations, setPrestations] = useState([]);
     const [services, setServices] = useState([]);
     const [serviceId, setServiceId] = useState("");
+
+    useEffect(() => {
+        if (categories.length > 0) 
+            return setCategories(categories);
+
+        Services.Categorie.getAll(abortController.signal)
+        .then(result => setCategories(result.data))
+        .catch(err => console.log(err));
+
+    }, [categories, setCategories, props]);
+    
 
     function handleCategorieChange(event) {
         event.preventDefault();
@@ -68,14 +80,14 @@ export function DepannageRapideForm(props) {
         event.target.form.submit();
     }
     return (
-        <div className="urgence-form">
+        <div className={props.classname ?? 'urgence-form'}>
             <form action="/commandes">
                 <h3>Dépannage Rapide</h3>
 
                 <div className="select-group">
                     <select required onChange={handleCategorieChange}>
                         <option>Choisissez une categorie</option>
-                        {props.categories.map((categorie, index) => {
+                        {categories.map((categorie, index) => {
                             return (
                                 <option value={categorie.id} key={index}>
                                     {categorie.nom}

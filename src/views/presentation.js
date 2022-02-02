@@ -4,18 +4,41 @@ import imgBollore from '../img/bollore.png'
 import imgOrange from '../img/orange.png'
 import imgRight from '../img/right.png'
 import imgICHero from '../img/ic_hero.png'
-import imgICEl from '../img/ic_el.png'
-import imgICAir from '../img/ic_air.png'
-import imgICPaint from '../img/ic_paint.png'
-import imgICMac from '../img/ic-mac.png'
-import imgICPlumb from '../img/ic_plumb.png'
-import imgICMas from '../img/ic_mas.png'
-import imgICCarp from '../img/ic_carp.png'
-import imgRightArrow from '../img/right-arrow.png'
 import imgBooks from '../img/books.png'
 import { Link } from 'react-router-dom'
+import { Components } from '../components'
+import {useState, useEffect} from 'react'
+import { Services } from '../services'
 
 export function Presentation(props) {
+    let [categories, setCategories] = useState([]);
+
+
+    useEffect(() => {
+        const abortController = new AbortController();
+
+        if (categories.length > 0) return;
+        Services.Categorie.getAll(abortController.signal)
+        .then(result => setCategories(result.data))
+        .catch(err => console.log(err));
+
+        return () => {
+            abortController.abort();
+        }
+    }, [categories])
+
+    function renderImgFromName(imgName) {
+        try {
+            const imgSlug = imgName.toLowerCase().replace(/ /g, '_')
+            .replace(/é/g, 'e').replace(/ç/g, 'c');
+            const img = require('../img/ic_' + imgSlug + '.png');
+            return <img className="card-icon" src={img} alt={imgName}/>;
+        } catch (error) {
+            return null;
+        }
+
+    }
+
     return (
         <> 
             <section>
@@ -46,58 +69,9 @@ export function Presentation(props) {
                         </p>
                     </div>
             
-                    <div className="service-container">
-                        <div className="service-box nth-child(1)">
-                            <img className="card-icon" src={imgICEl} alt="" />
-                            <p className="card-title">Electricité</p>
-                            <p className="card-detail">Detail</p>
-                            <img className="card-next" src={imgRightArrow} alt="" />
-                        </div>
+                    <Components.ServiceBox categories={categories}
+                    renderImgFromName={renderImgFromName}/>
 
-                        <div className="service-box nth-child(2)">
-                            <img className="card-icon" src={imgICAir} alt="" />
-                            <p className="card-title">Froid</p>
-                            <p className="card-detail">Detail</p>
-                            <img className="card-next" src={imgRightArrow} alt="" />
-                        </div>
-
-                        <div className="service-box nth-child(3)">
-                            <img className="card-icon" src={imgICPaint} alt="" />
-                            <p className="card-title">Peinture</p>
-                            <p className="card-detail">Detail</p>
-                            <img className="card-next" src={imgRightArrow} alt="" />
-                        </div>
-
-                        <div className="service-box nth-child(4)">
-                            <img className="card-icon" src={imgICMac} alt="" width="80px;" />
-                            <p className="card-title">Maçonnerie</p>
-                            <p className="card-detail">Detail</p>
-                            <img className="card-next" src={imgRightArrow} alt="" />
-                        </div>
-                    </div>
-
-                    <div className="service-container centered">
-                        <div className="service-box nth-child(5)">
-                            <img className="card-icon" src={imgICPlumb} alt="" />
-                            <p className="card-title">Plomberie</p>
-                            <p className="card-detail">Detail</p>
-                            <img className="card-next" src={imgRightArrow} alt="" />
-                        </div>
-
-                        <div className="service-box nth-child(6)">
-                            <img className="card-icon" src={imgICMas} alt="" />
-                            <p className="card-title">Jardinage</p>
-                            <p className="card-detail">Detail</p>
-                            <img className="card-next" src={imgRightArrow} alt="" />
-                        </div>
-
-                        <div className="service-box nth-child(7)">
-                            <img className="card-icon" src={imgICCarp} alt="" />
-                            <p className="card-title">Ménuserie</p>
-                            <p className="card-detail">Detail</p>
-                            <img className="card-next" src={imgRightArrow} alt="" />
-                        </div>
-                    </div>
                 </div>
             </div>
             

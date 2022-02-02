@@ -9,7 +9,7 @@ export function Commande(props) {
     const abortController = new AbortController();
     const params = useParams();
     const userType = "client";
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
 
     let [hasAccount, setHasAccount] = useState(false); 
     let [sousCategories, setSousCategories] = useState([]);
