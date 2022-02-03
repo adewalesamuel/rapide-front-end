@@ -19,6 +19,10 @@ export function DepannageRapideForm(props) {
         .then(result => setCategories(result.data))
         .catch(err => console.log(err));
 
+        return () => {
+            abortController.abort()
+        }
+
     }, [categories, setCategories, props]);
     
 

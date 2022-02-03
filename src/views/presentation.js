@@ -98,7 +98,7 @@ export function Presentation(props) {
                 </div>
             </div>
 
-            <div className="partners-container">
+            {/* <div className="partners-container">
                 <h2>Nos Partenaires & Fournisseurs</h2>
 
                 <div className="partners">
@@ -107,7 +107,7 @@ export function Presentation(props) {
                     <img src={imgBollore} alt="" />
                     <img src={imgOrange} alt="" />
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

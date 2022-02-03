@@ -6,7 +6,6 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { Views } from './views';
 import { Components } from './components'
 
-
 function App() {
   return (
     <BrowserRouter>

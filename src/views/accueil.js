@@ -9,10 +9,6 @@ import imgCarpentry from '../img/carpentry.png'
 import imgJardinage from '../img/jardinage.png'
 import imgMain from '../img/main.png'
 import imgMobile2 from '../img/mobile2.png'
-import imgSippec from '../img/sippec.png'
-import imgBernabe from '../img/bernabe.png'
-import imgBollore from '../img/bollore.png'
-import imgOrange from '../img/orange.png'
 import { Link } from 'react-router-dom'
 import {useState, useEffect} from 'react';
 import { Services } from '../services';
@@ -27,10 +23,26 @@ export function Acceuil(props) {
       Services.Categorie.getAll(abortController.signal)
       .then(result => setCategories(result.data))
       .catch(err => console.log(err));
+
+      return () => {
+          abortController.abort()
+      }
     
     }, []);
-    
 
+    function renderImgFromName(imgName, index) {
+        try {
+            const imgSlug = imgName.toLowerCase().replace(/ /g, '_')
+            .replace(/é/g, 'e').replace(/ç/g, 'c');
+            console.log(imgSlug)
+            const img = require('../img/' + imgSlug + '.png');
+            return <img className={"service " + "service-" + (index +1)} src={img} alt={imgName} key={index}/>;
+        } catch (error) {
+            return null;
+        }
+
+    }
+    
     return (
         <>
             <header>
@@ -45,13 +57,16 @@ export function Acceuil(props) {
                 <div className="card-services">
                     <img className="main" src={imgMain} alt="" />
 
-                    <img src={imgPlumbing} alt="" className="service service-1" />
+                    {/* <img src={imgPlumbing} alt="" className="service service-1" />
                     <img src={imgElectricity} alt="" className="service service-2" />
                     <img src={imgAc} alt="" className="service service-3" />
                     <img src={imgMaconerie} alt="" className="service service-4" />
                     <img src={imgPainting} alt="" className="service service-5" />
                     <img src={imgCarpentry} alt="" className="service service-6" />
-                    <img src={imgJardinage} alt="" className="service service-7" />
+                    <img src={imgJardinage} alt="" className="service service-7" /> */}
+                    {categories.map((categorie, index) => {
+                        return renderImgFromName(categorie.nom, index)
+                        })}
                 </div>
             </header>
 
@@ -105,7 +120,7 @@ export function Acceuil(props) {
                 </div>
             </div>
 
-            <div className="partners-section">
+            {/* <div className="partners-section">
                 <h2>Ils nous font tous confiance</h2>
 
                 <div className="partners">
@@ -114,7 +129,7 @@ export function Acceuil(props) {
                     <img src={imgBollore} alt="" />
                     <img src={imgOrange} alt="" />
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
