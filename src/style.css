@@ -1622,6 +1622,10 @@ body {
   margin-top: 20px;
 }
 
+.coordinates .steps {
+  margin-bottom: 50px;
+}
+
 .steps {
   display: flex;
   flex-direction: row;

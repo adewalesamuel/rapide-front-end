@@ -1,24 +1,17 @@
 import imgPlaystore from '../img/playstore.png'
 import imgAppstore from '../img/appstore.png'
-import imgPlumbing from '../img/plumbing.png'
-import imgElectricity from '../img/electricity.png'
-import imgAc from '../img/ac.png'
-import imgMaconerie from '../img/masonerie.png'
-import imgPainting from '../img/painting.png'
-import imgCarpentry from '../img/carpentry.png'
-import imgJardinage from '../img/jardinage.png'
 import imgMain from '../img/main.png'
 import imgMobile2 from '../img/mobile2.png'
 import { Link } from 'react-router-dom'
 import {useState, useEffect} from 'react';
 import { Services } from '../services';
-import { Components } from '../components'
+import { Components } from '../components';
+import {useNavigate} from 'react-router-dom'
 
 export function Acceuil(props) {
     const abortController = new AbortController();
-
+    const navigate = useNavigate()
     const [categories, setCategories] = useState([]);
-
     useEffect(() => {
       Services.Categorie.getAll(abortController.signal)
       .then(result => setCategories(result.data))
@@ -30,13 +23,14 @@ export function Acceuil(props) {
     
     }, []);
 
-    function renderImgFromName(imgName, index) {
+    function renderImgFromName(categorie, index) {
         try {
-            const imgSlug = imgName.toLowerCase().replace(/ /g, '_')
+            const imgSlug = categorie.nom.toLowerCase().replace(/ /g, '_')
             .replace(/é/g, 'e').replace(/ç/g, 'c');
-            console.log(imgSlug)
             const img = require('../img/' + imgSlug + '.png');
-            return <img className={"service " + "service-" + (index +1)} src={img} alt={imgName} key={index}/>;
+            return <img className={"service " + "service-" + (index +1)} src={img} 
+            alt={categorie.nom} key={index} onClick={event => navigate('/commandes/' + categorie.id)}
+            style={{cursor: 'pointer'}}/>;
         } catch (error) {
             return null;
         }
@@ -65,7 +59,7 @@ export function Acceuil(props) {
                     <img src={imgCarpentry} alt="" className="service service-6" />
                     <img src={imgJardinage} alt="" className="service service-7" /> */}
                     {categories.map((categorie, index) => {
-                        return renderImgFromName(categorie.nom, index)
+                        return renderImgFromName(categorie, index)
                         })}
                 </div>
             </header>
