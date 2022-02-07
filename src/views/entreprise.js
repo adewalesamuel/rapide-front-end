@@ -21,7 +21,7 @@ export function Entreprise(props) {
 
                 <Link className="btn" to="/presentation">QUI SOMMES NOUS ?</Link>
             </div>
-            <Components.DepannageRapideForm  classname="depannage-urg"/>
+            <Components.DepannageRapideForm  classname="depannage-urg" title={"Pour les entreprises"}/>
         </section>
 
         <div className="service-entreprise">

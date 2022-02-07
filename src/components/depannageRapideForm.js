@@ -86,7 +86,7 @@ export function DepannageRapideForm(props) {
     return (
         <div className={props.classname ?? 'urgence-form'}>
             <form action="/commandes">
-                <h3>Dépannage Rapide</h3>
+                <h3>{props.title ?? "Depannage Rapide"}</h3>
 
                 <div className="select-group">
                     <select required onChange={handleCategorieChange}>

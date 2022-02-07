@@ -26,7 +26,8 @@ export function Services(props) {
             const imgSlug = imgName.toLowerCase().replace(/ /g, '_')
             .replace(/é/g, 'e').replace(/ç/g, 'c');
             const img = require('../img/ic_' + imgSlug + '.png');
-            return <img className="card-icon" src={img} alt={imgName}/>;
+            return <img className="card-icon" src={img} alt={imgName} 
+            style={{width: "auto", height:"101px"}}/>;
         } catch (error) {
             return null;
         }
