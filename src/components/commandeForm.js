@@ -27,7 +27,7 @@ export function CommandeForm({state, method}) {
 
             <form action="#">
                 <select name="sous_categories" id="" onChange={method.handleSousCategorieChange}>
-                    <option>Choisissez une sous categorie</option>
+                    <option>(1) Choisissez une sous categorie</option>
                     {state.sousCategories.map((sousCategorie, index) => {
                         return (
                             <option value={sousCategorie.id} key={index}>
@@ -38,7 +38,7 @@ export function CommandeForm({state, method}) {
                 </select>
 
                 <select name="prestations" id="" value={state.prestationId} onChange={method.handlePrestationChange}>
-                    <option>Choisissez une prestation</option>
+                    <option>(2) Choisissez une prestation</option>
                         {state.prestations.map((prestation, index) => {
                             return (
                                 <option value={prestation.id} key={index}>
@@ -50,7 +50,7 @@ export function CommandeForm({state, method}) {
 
 
                 <select name="service_id" id="" value={state.serviceId} onChange={method.handleServiceChange}>
-                    <option>Choisissez un service</option>
+                    <option>(3) Choisissez un service</option>
                         {state.services.map((service, index) => {
                             return (
                                 <option value={service.id} key={index}>
@@ -60,9 +60,9 @@ export function CommandeForm({state, method}) {
                         })}
                 </select>
 
-                <input type="number" name="quantite" value={state.quantite} min={1} placeholder="Quantité" 
+                <input type="number" name="quantite" value={state.quantite} min={1} placeholder="(4) Quantité" 
                 onChange={(event) => method.setQuantite(event.target.value)}/> 
-                <input type="text" name="lieu" value={state.lieu} placeholder="Adresse de depannage" 
+                <input type="text" name="lieu" value={state.lieu} placeholder="(5) Adresse de depannage" 
                 onChange={(event) => method.setLieu(event.target.value)}/>
                 <input type="file" disabled placeholder="Ajouter une photo descriptive de votre besoin " 
                 style={{visibility: 'hidden'}}/>
