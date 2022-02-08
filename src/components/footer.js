@@ -12,10 +12,10 @@ export function Footer(props) {
                 <div className="footer-section">
                     <div className="footer-group">
                         <h4 className="footer-title">Services <span className="orange"> & Materiel</span></h4>
-                        <Link to="#">Dépannage Rapide</Link>
-                        <Link to="#">Achat du matériel</Link>
-                        <Link to="#">Plomberie</Link>
-                        <Link to="#">Electricite</Link>
+                        <Link to="/services">Dépannage Rapide</Link>
+                        <Link to="/services">Achat du matériel</Link>
+                        <Link to="/services">Plomberie</Link>
+                        <Link to="/services">Electricite</Link>
                     </div>
 
                     <div className="footer-group">
@@ -26,7 +26,7 @@ export function Footer(props) {
 
                     <div className="footer-group">
                         <h4 className="footer-title">Rapide <span className="orange"> Réparation</span></h4>
-                        <Link to="entreprise">Qui sommes nous ?</Link>
+                        <Link to="/entreprise">Qui sommes nous ?</Link>
                         <Link to="#">Politique de confidentialité</Link>
                     </div>
 

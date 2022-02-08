@@ -1,9 +1,9 @@
 const priceFormat = (price = 0, spacer = " ") => {    
-    let priceStrArr = price.toString().split('');
+    let priceStr = price.toString();
     let formatedPriceArr = [];
 
-    for (let i=priceStrArr.length; i >= 0; i -= 3) {
-        formatedPriceArr.unshift(price.toString().substring(i-3, i))
+    for (let i=priceStr.length; i >= 0; i -= 3) {
+        formatedPriceArr.unshift(priceStr.substring(i-3, i))
     }
 
     return formatedPriceArr.join(spacer)
