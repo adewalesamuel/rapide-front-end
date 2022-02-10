@@ -122,7 +122,7 @@ export function Commande(props) {
         event.preventDefault();
 
         if (step === 1 ) {
-            if (!serviceId || !lieu) return alert("Certains champs n'ont pas été remplis !");
+            if (!serviceId || !lieu || !quantite) return alert("Certains champs n'ont pas été remplis !");
             setStep(2);
         }
     }

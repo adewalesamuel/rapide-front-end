@@ -7,7 +7,7 @@ import imgRight from '../img/right.png'
 import imgSearch from '../img/search.png'
 import imgSelection from '../img/selection.png'
 import imgCart from '../img/cart.png'
-import imgBooks from '../img/books.png'
+import imgBooks from '../img/plaquette-presentation.png'
 import { Link } from 'react-router-dom'
 import { Components } from '../components'
 
@@ -127,15 +127,16 @@ export function Entreprise(props) {
                     
                     <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
+                    <a className="links" to="#" style={{color: "#EF8123"}}
+                    href="/plaquette-presentation.PDF" download={"Plaquette de presenation"}>
+                        <img src={imgRight} alt="alt" width="30px" />
+                        &nbsp; Plaquette de Présentation
+                    </a>
                     <a className="links" href="/formulaire-de-demande-de-devis.pdf" 
                     download={"Formulaire de demande de devis"} style={{color: "#2a265b"}}>
                         <img src={imgRight} alt="alt" width="30px" />
                         &nbsp; Formualaire de demande de devis
                     </a>
-                    <Link className="links" to="#" style={{color: "#EF8123"}}>
-                        <img src={imgRight} alt="alt" width="30px" />
-                        &nbsp; Plaquette de Présentation
-                    </Link>
 
                     <Link className="links" to="#" style={{color: "#efbf44"}}>
                         <img src={imgRight} alt="alt" width="30px" />
@@ -144,7 +145,7 @@ export function Entreprise(props) {
                     </Link>
                 </div>
 
-                <img src={imgBooks} alt="" />
+                <img src={imgBooks} alt="" style={{paddingTop:"20px"}}/>
             </div>
         </div>
         </>

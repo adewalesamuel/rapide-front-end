@@ -67,7 +67,7 @@ export function CommandeForm({state, method}) {
                 <input type="file" disabled placeholder="Ajouter une photo descriptive de votre besoin " 
                 style={{visibility: 'hidden'}}/>
 
-                {state.serviceId ?
+                {(state.quantite && state.quantite > 0) ?
                     <Components.CoutDepannage state={state}/>
                     : null
                 }

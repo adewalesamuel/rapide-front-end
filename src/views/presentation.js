@@ -1,10 +1,6 @@
-import imgSippec from '../img/sippec.png'
-import imgBernabe from '../img/bernabe.png'
-import imgBollore from '../img/bollore.png'
-import imgOrange from '../img/orange.png'
 import imgRight from '../img/right.png'
 import imgICHero from '../img/ic_hero.png'
-import imgBooks from '../img/books.png'
+import imgBooks from '../img/plaquette-presentation.png'
 import { Link } from 'react-router-dom'
 import { Components } from '../components'
 import {useState, useEffect} from 'react'
@@ -83,16 +79,11 @@ export function Presentation(props) {
                         
                         <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
-                        <a className="links" href="/formulaire-de-demande-de-devis.pdf" 
-                        download={"Formulaire de demande de devis"} style={{color: "#2a265b"}}>
-                            <img src={imgRight} alt="alt" width="30px" />
-                            &nbsp; Formualaire de demande de devis
-                        </a>
-                        <Link className="links" to="#" style={{color: "#EF8123"}}>
+                        <a className="links" to="#" style={{color: "#EF8123"}}
+                        href="/plaquette-presentation.PDF" download={"Plaquette de presenation"}>
                             <img src={imgRight} alt="alt" width="30px" />
                             &nbsp; Plaquette de Présentation
-                        </Link>
-
+                        </a>
                         <Link className="links" to="#" style={{color: "#efbf44"}}>
                             <img src={imgRight} alt="alt" width="30px" />
                             &nbsp; 
@@ -100,7 +91,7 @@ export function Presentation(props) {
                         </Link>
                     </div>
 
-                    <img src={imgBooks} alt="" />
+                    <img src={imgBooks} alt="" style={{paddingTop:"20px"}}/>
                 </div>
             </div>
 
