@@ -4,13 +4,17 @@ import { Services } from '../services';
 function Inscription(props) {
     const abortController = new AbortController();
     const userType = "client";
-    let [nomPrenoms, setNomPrenoms] = useState("");
-    let [mail, setMail] = useState("");
-    let [telephone, setTelephone] = useState("");
-    let [password, setPassword] = useState("");
-    let [cPassword, setCpassword] = useState("");
-    let [pcCode, setPcCode] = useState("");
-    let [isLoading, setIsLoading] = useState(false);
+    const [nomPrenoms, setNomPrenoms] = useState("");
+    const [mail, setMail] = useState("");
+    const [telephone, setTelephone] = useState("");
+    const [password, setPassword] = useState("");
+    const [cPassword, setCpassword] = useState("");
+    const [type, setType] = useState("particulier")
+    const [nomEntreprise, setNomEntreprise] = useState("");
+    const [registreCommerce, setRegistreCommerce] = useState("");
+    const [dfe, setDfe] = useState("");
+    const [pcCode, setPcCode] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     function handleUserFormSubmit(event) {
         event.preventDefault();
@@ -20,7 +24,10 @@ function Inscription(props) {
             'telephone': telephone,
             'password': password,
             'type': userType,
-            'pc_code': pcCode
+            'pc_code': pcCode,
+            'nom_entreprise': nomEntreprise,
+            'registre_commerce': registreCommerce,
+            'dfe': dfe
         };
 
         if (password !== cPassword) return alert('Les mots de passe ne correspondent pas !');
@@ -54,6 +61,25 @@ function Inscription(props) {
                         onChange={event => setMail(event.target.value)} placeholder="Adresse Email" />
                         <input type="text" name="telephone" required value={telephone} 
                         onChange={event => setTelephone(event.target.value)} placeholder="Numéro téléphone" />
+                        <select name="type" id="" style={{width: '100%', marginTop:"15px"}} value={type} 
+                        onChange={event => setType(event.target.value)}>
+                            <option value="particulier" key="1">
+                                Particulier
+                            </option>
+                            <option value="entreprise" key="2">
+                                Entreprise
+                            </option>
+                        </select>
+                        {type === "entreprise" ?
+                        <>
+                            <input type="text" name="nom_entreprise" required value={nomEntreprise} 
+                            onChange={event => setNomEntreprise(event.target.value)} placeholder="Nom de l'entreprise" />
+                            <input type="text" name="registre_commerce" required value={registreCommerce} 
+                            onChange={event => setRegistreCommerce(event.target.value)} placeholder="Registre de commerce" />
+                            <input type="text" name="dfe" required value={dfe} 
+                            onChange={event => setDfe(event.target.value)} placeholder="DFE" />
+                        </> : null
+                        }
                         <input type="password"autoComplete="on" name="password" required value={password} 
                         onChange={event => setPassword(event.target.value)} placeholder="Definissez votre mot de passe" />
                         <input type="password"autoComplete="on" name="cpassword" required value={cPassword} 

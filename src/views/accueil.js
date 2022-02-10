@@ -1,12 +1,12 @@
 import imgPlaystore from '../img/playstore.png'
 import imgAppstore from '../img/appstore.png'
-import imgMain from '../img/main.png'
+import imgMain from '../img/services/11zon_cropped-4.png'
 import imgMobile2 from '../img/mobile2.png'
 import { Link } from 'react-router-dom'
 import {useState, useEffect} from 'react';
 import { Services } from '../services';
 import { Components } from '../components';
-import {useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom';
 
 export function Acceuil(props) {
     const abortController = new AbortController();

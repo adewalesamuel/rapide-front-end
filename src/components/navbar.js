@@ -1,10 +1,13 @@
 import imgLogo from '../img/logo.png'
 import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 export function NavBar(props) {
+    const navigate = useNavigate();
     return (
         <div className="navbar-navigation">
-            <img src={imgLogo} alt="" className="logo" />
+            <img src={imgLogo} alt="" style={{cursor: 'pointer'}} 
+            className="logo" onClick={event => navigate('/')}/>
             <div className="navigation">
                 <Link to='/'>Accueil</Link>
                 <Link to='/presentation'>Présentation</Link>

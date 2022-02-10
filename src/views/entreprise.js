@@ -127,12 +127,17 @@ export function Entreprise(props) {
                     
                     <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
-                    <Link className="links" to="#" style={{color: '#EF8123'}}>
+                    <a className="links" href="/formulaire-de-demande-de-devis.pdf" 
+                    download={"Formulaire de demande de devis"} style={{color: "#2a265b"}}>
+                        <img src={imgRight} alt="alt" width="30px" />
+                        &nbsp; Formualaire de demande de devis
+                    </a>
+                    <Link className="links" to="#" style={{color: "#EF8123"}}>
                         <img src={imgRight} alt="alt" width="30px" />
                         &nbsp; Plaquette de Présentation
                     </Link>
 
-                    <Link className="links" to="#">
+                    <Link className="links" to="#" style={{color: "#efbf44"}}>
                         <img src={imgRight} alt="alt" width="30px" />
                         &nbsp; 
                         Matrice de Prix

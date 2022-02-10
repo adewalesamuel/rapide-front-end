@@ -8,21 +8,24 @@ export function CoutDepannage({state}) {
             return (
                 <span style={{color: "#968A8A"}}>
                     <div style={{width:"100%"}}>
-                        Estimation Total du Dépanage : <span style={{fontSize: "1.6rem", color: "red"}}>Sur devis</span>
+                        Estimation Total du Dépanage : 
+                        <span style={{fontSize: "1.6rem", color: "#ef8123"}}>Sur devis</span>
                     </div>
                     <div>{service.description}</div>
                 </span>
             )
         } else {
             return (
-                <span style={{color: "#968A8A", maxWidth: "300px"}}>
+                <span style={{color: "#968A8A", gridColumn:'1/3', textAlign: "justify"}}>
                     <div style={{width:"100%"}}>
-                        Estimation Total du Dépanage : <br />
-                        <span style={{fontSize: "1.6rem", color: "red"}}>
+                        Estimation Total du Dépanage :
+                        <span style={{fontSize: "1.6rem", color: "#ef8123", marginLeft: '10px'}}>
                             {  _Helpers.Strings.priceFormat(service.prix * state.quantite) + " Fcfa"}</span>
                     </div>
                     <div>{service.description}</div>
-                    <div style={{fontWeight: "bolder", color:"red", marginTop: "20px"}}>NB: Les prix affichés ne sont qu'a titre indicatif. Ils peuvent évoluer après la visite technique</div>
+                    <div style={{fontWeight: "bolder", color: "red", marginTop: "20px"}}>NB: Le montant 
+                    affiché représente uniquement le coût de la prestation. Il peut être modifié après 
+                    une visite sur les lieux et fonction des réalités du terrain.</div>
                 </span>
             )
         }

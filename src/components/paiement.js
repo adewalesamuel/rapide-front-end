@@ -25,7 +25,7 @@ export function Paiement({state, method}) {
                 <hr className="divider-step" />
             </div>
 
-            <div className='accept-account'>
+            <div className='accept-account' style={{maxWidth: "750px", marging: 'auto', paddingBottom:'20px'}}>
                 <Components.CoutDepannage state={state}/>
             </div>
 

@@ -123,7 +123,7 @@ span.info-4 > img {
 /* HEADER */
 header {
   min-height: calc(100vh - 350px);
-  background-image: url("./img/hero-bg.png");
+  background-image: url("./img/acceuil03.jpg");
   background-position: center;
   background-size: cover;
   display: grid;
@@ -648,13 +648,13 @@ footer {
 }
 
 .footer-group > h4 {
-  font-size: 1.7em;
+  font-size: 1.1em;
   padding-bottom: 4px;
   border-bottom: 2px solid #ffffff;
   margin: 0 0 30px 0;
   padding: 0;
   font-family: "Gothic";
-  font-weight: 400;
+  font-weight: bold;
 }
 
 span.orange {
@@ -665,7 +665,6 @@ span.orange {
 .footer-group > a {
   color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
   margin-bottom: 10px;
   transition: 0.2s all !important;
 }
@@ -1248,7 +1247,7 @@ body {
 
 .block {
   min-height: calc(100vh - 350px);
-  background-image: url("./img/entre-bg.png");
+  background-image: url("./img/ENTREPRISE02.jpg");
   background-position: center;
   background-size: cover;
   display: grid;
@@ -1950,6 +1949,7 @@ hr.divider-step {
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 40px;
   grid-row-gap: 30px;
+  max-width: 750px;
 }
 
 .coordinates > form > select,
@@ -2469,7 +2469,7 @@ body {
 /* CONTACT SECTION */
 .contactSection {
   min-height: calc(60vh);
-  background-image: url("./img/cover.png");
+  background-image: url("./img/CONTACTS01.jpg");
   background-position: center;
   background-size: cover;
   display: flex;
