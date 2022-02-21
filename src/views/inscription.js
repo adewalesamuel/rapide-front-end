@@ -72,7 +72,7 @@ function Inscription(props) {
                             onChange={event => setNomPrenoms(event.target.value)} placeholder="Nom & Prénoms" />
                             <input type="email" name="mail" required value={mail} 
                             onChange={event => setMail(event.target.value)} placeholder="Adresse Email" />
-                            <input type="text" name="telephone" required value={telephone} 
+                            <input type="text" name="telephone" minLength={10} required value={telephone} 
                             onChange={event => setTelephone(event.target.value)} placeholder="Numéro téléphone" />
                             <select name="type" id="" style={{width: '100%', marginTop:"15px"}} value={type} 
                             onChange={event => setType(event.target.value)}>

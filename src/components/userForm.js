@@ -51,7 +51,7 @@ export function UserForm({state, method}) {
                         onChange={event => method.setMail(event.target.value)} placeholder="Adresse Email" />
                         <input type="password" name="cpassword" required value={state.cpassword} 
                         onChange={event => method.setCpassword(event.target.value)} placeholder="Retapez votre mot de passe" />
-                        <input type="text" name="telephone" required value={state.telephone} 
+                        <input type="text" name="telephone" minLength={10} required value={state.telephone} 
                         onChange={event => method.setTelephone(event.target.value)} placeholder="Numéro téléphone" />
                         {state.isEntreprise ?
                             <>

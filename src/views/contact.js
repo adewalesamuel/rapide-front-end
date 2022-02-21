@@ -4,7 +4,55 @@ import imgTwitter from '../img/twitter.png';
 import imgInstagram from '../img/instagram.png';
 import imgYoutube from '../img/youtube.png';
 
+import {useState, useRef} from 'react';
+
+import { Forms } from '../_helpers/forms';
+import { Services } from '../services';
+
 export function Contact() {
+    const formElement = useRef();
+    const abortController = new AbortController();
+    const [nomPrenoms, setNomPrenoms] = useState("");
+    const [mail, setMail] = useState("");
+    const [telephone, setTelephone] = useState("");
+    const [objet, setObject] = useState("");
+    const [message, setMessage] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+
+    function handleContactFormSubmit(event) {
+        event.preventDefault();
+
+        if (!mail || !message) 
+            return alert("Le mail ou le message n'a pas été défini");
+
+        const payload = {
+            "nom_prenoms": nomPrenoms,
+            "email": mail,
+            "telephone": telephone,
+            "message": message
+        };
+
+        setIsLoading(true);
+        Services.Contact.sendForm(JSON.stringify(payload), abortController.signal)
+        .then(res => {
+            setIsLoading(false);
+            resetForm();
+            alert("Votre message a bien été envoyé!");
+        })
+        .catch(err => {
+            setIsLoading(false);
+            alert("Une erreure est survenue. Veuillez réessayer plus tard!");
+        });
+    }
+
+    function resetForm() {
+        setMail("");
+        setNomPrenoms("");
+        setTelephone("");
+        setObject("");
+        setMessage("");
+    }
+
     return (
         <>
             <section className='contactSection'>
@@ -19,16 +67,25 @@ export function Contact() {
                         <h1>Ecrivez-nous</h1>
                         <hr className="underliner" />
 
-                        <form action="#">
-                            <input type="text" placeholder="Nom & Prénoms" />
-                            <input type="text" placeholder="Numéro Télephone" />
-                            <input type="text" placeholder="Email" />
-                            <input type="text" placeholder="Objet du message" />
+                        <form action="#" ref={formElement} onSubmit={event => {
+                                handleContactFormSubmit(event);
+                                Forms.validateForm(formElement.current)
+                            }}>
+                            <input type="text" placeholder="Nom & Prénoms" value={nomPrenoms} 
+                            onChange={event => setNomPrenoms(event.target.value)}/>
+                            <input type="text" placeholder="Numéro Télephone" value={telephone} 
+                            onChange={event => setTelephone(event.target.value)} minLength={10}/>
+                            <input type="email" placeholder="Email" value={mail} required 
+                            onChange={event => setMail(event.target.value)} />
+                            <input type="text" placeholder="Objet du message" value={objet} 
+                            onChange={event => setObject(event.target.value)} required/>
 
-                            <textarea name="" id="" cols="30" rows="10" defaultValue="Message"></textarea>
+                            <textarea name="" id="" cols="30" rows="10" value={message} 
+                            onChange={event => setMessage(event.target.value)} placeholder="Votre message"></textarea>
 
                             <div className="btn-wrapper">
-                                <button type="submit">Envoyer</button>
+                                <button type="submit"disabled={isLoading ? true : false}>
+                                {isLoading ? "En cours de chargement..." : "Envoyer"}</button>
                             </div>
                         </form>
                     </div>

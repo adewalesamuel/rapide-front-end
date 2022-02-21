@@ -4,6 +4,7 @@ import {Prestation} from './prestations';
 import {Auth} from './auth'
 import {Commande} from './commandes'
 import { Service } from './services';
+import { Contact } from './contact';
 
 export const Services = {
     Categorie,
@@ -11,5 +12,6 @@ export const Services = {
     Prestation,
     Auth,
     Commande,
-    Service
+    Service,
+    Contact
 }
