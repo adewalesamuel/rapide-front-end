@@ -13,7 +13,7 @@ export function Footer(props) {
                     <div className="footer-group">
                         <h4 className="footer-title">Services <span className="orange"> & Materiel</span></h4>
                         <Link to="/services">Dépannage Rapide</Link>
-                        <Link to="/services">Achat du matériel</Link>
+                        <a href="https://marketplace.rapide-reparation.com/" target={'_blank'} rel="noreferrer">Achat du matériel</a>
                         <Link to="/services">Plomberie</Link>
                         <Link to="/services">Electricite</Link>
                     </div>
@@ -27,15 +27,15 @@ export function Footer(props) {
                     <div className="footer-group">
                         <h4 className="footer-title">Rapide <span className="orange"> Réparation</span></h4>
                         <Link to="/entreprise">Qui sommes nous ?</Link>
-                        <Link to="#">Politique de confidentialité</Link>
+                        <Link to="/conditions-utilisation">Conditions d'utilisation</Link>
                     </div>
 
                     <div className="footer-group">
                         <h4 className="footer-title">Nos <span className="orange"> Contacts</span></h4>
                         <Link to="#">2021 - Rapide Reparation, <br/> Tous droits reserves.</Link>
                         <Link to="#">Email: info@rapide-reparation.ci</Link>
-                        <Link to="#">Call Center: +225 25 22 40 78 90</Link>
-                        <Link to="#">Telephone: +225 25 00 00 00 90</Link>
+                        {/* <Link to="#">Call Center: +225 25 22 40 78 90</Link> */}
+                        <Link to="#">Telephone: +225 25 22 01 61 26</Link>
                     </div>
                 </div>
             </footer>
@@ -56,7 +56,7 @@ export function Footer(props) {
                     <img src={imgUrgence} alt="" />
                     Entreprise
                 </Link>
-                <Link to="#" className="bloc-icon">
+                <Link to="/inscription" className="bloc-icon">
                     <img src={imgAccount} alt="" />
                     Compte
                 </Link>

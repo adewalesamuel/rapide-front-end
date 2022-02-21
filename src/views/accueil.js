@@ -8,10 +8,13 @@ import { Services } from '../services';
 import { Components } from '../components';
 import {useNavigate} from 'react-router-dom';
 
-export function Acceuil(props) {
+export function Accueil(props) {
     const abortController = new AbortController();
+
     const navigate = useNavigate()
+
     const [categories, setCategories] = useState([]);
+
     useEffect(() => {
       Services.Categorie.getAll(abortController.signal)
       .then(result => setCategories(result.data))
@@ -28,7 +31,8 @@ export function Acceuil(props) {
             const imgSlug = categorie.nom.toLowerCase().replace(/ /g, '_')
             .replace(/é/g, 'e').replace(/ç/g, 'c');
             const img = require('../img/' + imgSlug + '.png');
-            return <img className={"service " + "service-" + (index +1)} src={img} 
+
+            return <img className={"service " + "service-" + (index +1)} src={img}
             alt={categorie.nom} key={index} onClick={event => navigate('/commandes/' + categorie.id)}
             style={{cursor: 'pointer'}}/>;
         } catch (error) {
@@ -51,13 +55,6 @@ export function Acceuil(props) {
                 <div className="card-services">
                     <img className="main" src={imgMain} alt="" />
 
-                    {/* <img src={imgPlumbing} alt="" className="service service-1" />
-                    <img src={imgElectricity} alt="" className="service service-2" />
-                    <img src={imgAc} alt="" className="service service-3" />
-                    <img src={imgMaconerie} alt="" className="service service-4" />
-                    <img src={imgPainting} alt="" className="service service-5" />
-                    <img src={imgCarpentry} alt="" className="service service-6" />
-                    <img src={imgJardinage} alt="" className="service service-7" /> */}
                     {categories.map((categorie, index) => {
                         return renderImgFromName(categorie, index)
                         })}

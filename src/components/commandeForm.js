@@ -1,6 +1,10 @@
+import {useRef, useEffect} from 'react';
 import { Components } from ".";
+import { Forms } from '../_helpers/forms';
 
 export function CommandeForm({state, method}) {
+    let formElement = useRef("");
+
     return (
         <>
             <div className="steps-wrapper">
@@ -25,9 +29,9 @@ export function CommandeForm({state, method}) {
                 <hr className="divider-step" />
             </div>
 
-            <form action="#">
-                <select name="sous_categories" id="" onChange={method.handleSousCategorieChange}>
-                    <option>(1) Choisissez une sous categorie</option>
+            <form action="#" ref={formElement}>
+                <select required name="sous_categories" id="" onChange={method.handleSousCategorieChange}>
+                    <option value="">(1) Choisissez une sous categorie</option>
                     {state.sousCategories.map((sousCategorie, index) => {
                         return (
                             <option value={sousCategorie.id} key={index}>
@@ -37,8 +41,8 @@ export function CommandeForm({state, method}) {
                     })}
                 </select>
 
-                <select name="prestations" id="" value={state.prestationId} onChange={method.handlePrestationChange}>
-                    <option>(2) Choisissez une prestation</option>
+                <select required name="prestations" id="" value={state.prestationId} onChange={method.handlePrestationChange}>
+                    <option value="">(2) Choisissez une prestation</option>
                         {state.prestations.map((prestation, index) => {
                             return (
                                 <option value={prestation.id} key={index}>
@@ -49,8 +53,8 @@ export function CommandeForm({state, method}) {
                 </select>
 
 
-                <select name="service_id" id="" value={state.serviceId} onChange={method.handleServiceChange}>
-                    <option>(3) Choisissez un service</option>
+                <select required name="service_id" id="" value={state.serviceId} onChange={method.handleServiceChange}>
+                    <option value="">(3) Choisissez un service</option>
                         {state.services.map((service, index) => {
                             return (
                                 <option value={service.id} key={index}>
@@ -60,9 +64,9 @@ export function CommandeForm({state, method}) {
                         })}
                 </select>
 
-                <input type="number" name="quantite" value={state.quantite} min={1} placeholder="(4) Quantité" 
+                <input required type="number" name="quantite" value={state.quantite} min={1} placeholder="(4) Quantité" 
                 onChange={(event) => method.setQuantite(event.target.value)}/> 
-                <input type="text" name="lieu" value={state.lieu} placeholder="(5) Adresse de depannage" 
+                <input required type="text" name="lieu" value={state.lieu} placeholder="(5) Adresse de depannage" 
                 onChange={(event) => method.setLieu(event.target.value)}/>
                 <input type="file" disabled placeholder="Ajouter une photo descriptive de votre besoin " 
                 style={{visibility: 'hidden'}}/>
@@ -80,7 +84,9 @@ export function CommandeForm({state, method}) {
                 <div className="validate" 
                 style={{gridColumn: "1/3", display:"flex", alignItems:"center", justifyContent:'center'}}>
                     <button type="submit" style={{backgroundColor: "#2A265B", border:"none", color: "#fff", 
-                    padding: "7px 40px", borderRadius: "5px", cursor: 'pointer'}} onClick={method.handleNextClick}
+                    padding: "7px 40px", borderRadius: "5px", cursor: 'pointer'}} onClick={event => {
+                        method.handleNextClick(event); 
+                        Forms.validateForm(formElement.current)}}
                     disabled={state.isLoading ? true : false}>
                         {state.isLoading ? "En cours de chargement..." : "Suivant"}
                     </button>

@@ -11,15 +11,14 @@ export function Services(props) {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (categories.length > 0) return;
-        ApiSerivices.Categorie.getAll(abortController.signal)
+        ApiSerivices.Categorie.getAll()
         .then(result => setCategories(result.data))
         .catch(err => console.log(err));
 
         return () => {
             abortController.abort();
         }
-    }, [categories])
+    }, [])
 
     function renderImgFromName(imgName) {
         try {

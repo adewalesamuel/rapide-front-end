@@ -79,16 +79,17 @@ export function Presentation(props) {
                         
                         <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
-                        <a className="links" to="#" style={{color: "#EF8123"}}
+                        <a className="links" to="#" style={{color: "#2a265b"}}
                         href="/plaquette-presentation.PDF" download={"Plaquette de presenation"}>
                             <img src={imgRight} alt="alt" width="30px" />
-                            &nbsp; Plaquette de Présentation
+                            &nbsp; Plaquette de présentation
                         </a>
-                        <Link className="links" to="#" style={{color: "#efbf44"}}>
+                    
+                        <a className="links" href="/matrice-prix.pdf" download={"Matrice de prix"} style={{color: "#2a265b"}}>
                             <img src={imgRight} alt="alt" width="30px" />
                             &nbsp; 
                             Matrice de Prix
-                        </Link>
+                        </a>
                     </div>
 
                     <img src={imgBooks} alt="" style={{paddingTop:"20px"}}/>

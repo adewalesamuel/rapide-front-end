@@ -16,6 +16,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+select {
+  background-color: inherit !important;
+}
 /* TOPBAR - MENU */
 
 .topbar-menu {
@@ -1762,6 +1766,7 @@ hr.step-separator {
   align-items: flex-start;
   justify-content: flex-start;
   position: relative;
+  max-width: 500px;
 }
 
 .description-service > .title-section > form {
@@ -2349,7 +2354,8 @@ span.checkbox  {
 }
 
 form > img.checkbox {
-  left: 82%;
+  left: 50%;
+  transform: translateX(-50%);
   position: relative;
   margin-right: 30px;
   width: 180px;

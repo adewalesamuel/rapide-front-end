@@ -1,6 +1,11 @@
+import {useRef} from 'react';
+
 import { Components } from ".";
+import { Forms } from "../_helpers/forms";
 
 export function UserForm({state, method}) {
+    const formElement = useRef();
+
     return (
         <>
             <div className="steps-wrapper">
@@ -35,7 +40,7 @@ export function UserForm({state, method}) {
             </div>
 
 
-            <form action="#">
+            <form action="#" ref={formElement}>
                 {!state.hasAccount ? 
                     <>
                         <input type="text" name="nom_prenoms" required value={state.nomPrenoms} 
@@ -48,7 +53,18 @@ export function UserForm({state, method}) {
                         onChange={event => method.setCpassword(event.target.value)} placeholder="Retapez votre mot de passe" />
                         <input type="text" name="telephone" required value={state.telephone} 
                         onChange={event => method.setTelephone(event.target.value)} placeholder="Numéro téléphone" />
-                        <input type="text" name="" placeholder="Lieu de Residence"  style={{visibility: 'hidden'}} disabled/>
+                        {state.isEntreprise ?
+                            <>
+                            <input type="text" name="nom_entreprise" required value={state.nomEntreprise} 
+                            onChange={event => method.setNomEntreprise(event.target.value)} placeholder="Nom de l'entreprise" />
+                            <input type="text" name="registre_commerce" required value={state.registreCommerce} 
+                            onChange={event => method.setRegistreCommerce(event.target.value)} placeholder="Registre de commerce" />
+                            <input type="text" name="dfe" required value={state.dfe} 
+                            onChange={event => method.setDfe(event.target.value)} placeholder="Numéro contribuable" />
+                            </> : null
+                        }
+                        <input type="text" name="" placeholder="Lieu de Residence"  
+                        style={{visibility: 'hidden',gridColumn:'1/3', maxHeight:"0px", marginTop: "-30px"}} disabled/>
                     </> : 
                     <>
                         <input type="email" name="mail" required value={state.mail} 
@@ -63,7 +79,10 @@ export function UserForm({state, method}) {
                 <div className="validate" 
                 style={{gridColumn: "1/3", display:"flex", alignItems:"center", justifyContent:'center'}}>
                     <button type="submit" style={{backgroundColor: "#2A265B", border:"none", color: "#fff", 
-                padding: "7px 40px", borderRadius: "5px", cursor: 'pointer'}} onClick={method.handleUserFormSubmit}
+                padding: "7px 40px", borderRadius: "5px", cursor: 'pointer'}} onClick={event => {
+                    method.handleUserFormSubmit(event);
+                    Forms.validateForm(formElement.current)
+                }}
                 disabled={state.isLoading ? true : false}>
                     {state.isLoading ? "En cours de chargement..." : "Suivant"}
                 </button>

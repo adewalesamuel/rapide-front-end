@@ -1,7 +1,6 @@
-import imgICEl from '../img/ic_el.png'
-import imgICAir from '../img/ic_air.png'
-import imgICPaint from '../img/ic_paint.png'
-import imgICPlumb from '../img/ic_plumb.png'
+import {useEffect, useState} from 'react'
+import { Services } from '../services'
+
 import imgRightArrow from '../img/right-arrow.png'
 import imgRight from '../img/right.png'
 import imgSearch from '../img/search.png'
@@ -11,7 +10,23 @@ import imgBooks from '../img/plaquette-presentation.png'
 import { Link } from 'react-router-dom'
 import { Components } from '../components'
 
+const abortController = new AbortController();
+
 export function Entreprise(props) {
+    const [categories, setCategories] = useState([]);
+    
+    useEffect(() => {
+        const abortController = new AbortController();
+        
+        Services.Categorie.getAll(abortController.signal)
+        .then(result => setCategories(result.data))
+        .catch(err => console.log(err));
+
+      return () => {
+          abortController.abort()
+      }
+    
+    }, []);
     return (
         <> 
         <section className='block'>
@@ -21,40 +36,36 @@ export function Entreprise(props) {
 
                 <Link className="btn" to="/presentation">QUI SOMMES NOUS ?</Link>
             </div>
-            <Components.DepannageRapideForm  classname="depannage-urg" title={"Pour les entreprises"}/>
+            <Components.DepannageRapideForm  classname="depannage-urg" title={"Pour les entreprises"} categories={categories}/>
         </section>
 
         <div className="service-entreprise">
 
-            <div className="services-boxurg">
-                    <div className="service-cardurg nth-child(1)">
-                        <img className="card-icon" src={imgICEl} alt="" />
-                        <p className="card-title">Electricité</p>
-                        <p className="card-detail">Textes</p>
-                        <img className="card-next" src={imgRightArrow} alt="" />
-                    </div>
-
-                    <div className="service-cardurg nth-child(2)">
-                        <img className="card-icon" src={imgICPlumb} alt="" />
-                        <p className="card-title">Plomberie</p>
-                        <p className="card-detail">Textes</p>
-                        <img className="card-next" src={imgRightArrow} alt="" />
-                    </div>
-
-                    <div className="service-cardurg nth-child(3)">
-                        <img className="card-icon" src={imgICAir} alt="" />
-                        <p className="card-title">Froid</p>
-                        <p className="card-detail">Textes</p>
-                        <img className="card-next" src={imgRightArrow} alt="" />
-                    </div>
-
-                    <div className="service-cardurg nth-child(4)">
-                        <img className="card-icon" src={imgICPaint} alt="" />
-                        <p className="card-title">Peinture</p>
-                        <p className="card-detail">Textes</p>
-                        <img className="card-next" src={imgRightArrow} alt="" />
-                    </div>
+            {/* <div className="services-boxurg">
+                <div className="service-cardurg nth-child(1)">
+                    <img className="card-icon" src={imgICEl} alt="" />
+                    <p className="card-title">Electricité</p>
+                    <p className="card-detail"></p>
                 </div>
+
+                <div className="service-cardurg nth-child(2)">
+                    <img className="card-icon" src={imgICPlumb} alt="" />
+                    <p className="card-title">Plomberie</p>
+                    <p className="card-detail"></p>
+                </div>
+
+                <div className="service-cardurg nth-child(3)">
+                    <img className="card-icon" src={imgICAir} alt="" />
+                    <p className="card-title">Froid</p>
+                    <p className="card-detail"></p>
+                </div>
+
+                <div className="service-cardurg nth-child(4)">
+                    <img className="card-icon" src={imgICPaint} alt="" />
+                    <p className="card-title">Peinture</p>
+                    <p className="card-detail"></p>
+                </div>
+            </div> */}
         </div>
     
         <div className="tutorial">
@@ -127,22 +138,22 @@ export function Entreprise(props) {
                     
                     <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
-                    <a className="links" to="#" style={{color: "#EF8123"}}
+                    <a className="links" to="#" style={{color: "#2a265b"}}
                     href="/plaquette-presentation.PDF" download={"Plaquette de presenation"}>
                         <img src={imgRight} alt="alt" width="30px" />
-                        &nbsp; Plaquette de Présentation
+                        &nbsp; Plaquette de présentation
                     </a>
                     <a className="links" href="/formulaire-de-demande-de-devis.pdf" 
                     download={"Formulaire de demande de devis"} style={{color: "#2a265b"}}>
                         <img src={imgRight} alt="alt" width="30px" />
-                        &nbsp; Formualaire de demande de devis
+                        &nbsp; Formulaire de demande de devis
                     </a>
 
-                    <Link className="links" to="#" style={{color: "#efbf44"}}>
+                    <a className="links" href="/matrice-prix.pdf" download={"Matrice de prix"} style={{color: "#2a265b"}}>
                         <img src={imgRight} alt="alt" width="30px" />
                         &nbsp; 
                         Matrice de Prix
-                    </Link>
+                    </a>
                 </div>
 
                 <img src={imgBooks} alt="" style={{paddingTop:"20px"}}/>

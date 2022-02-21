@@ -1,4 +1,4 @@
-const getSessionToken = () => {
+const getSessionToken = () => { 
     return localStorage.getItem('sessionToken');
 }
 

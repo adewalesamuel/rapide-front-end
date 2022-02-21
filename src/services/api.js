@@ -3,23 +3,22 @@ import { Modules } from "../modules";
 const URL = 'http://127.0.0.1';
 const PORT = '8000';
 const API_URL = process.env.REACT_APP_API_URL ?? `${URL}:${PORT}`;
-const ROOT_PATH  = '/api' 
+const ROOT_PATH  = '/api';
 const HEADERS = new Headers({
-    'Content-type': 'application/json',
     'Accept': 'application/json',
-    'Connection': 'keep-alive',
-    'Authorization': `Bearer ${Modules.Auth.getSessionToken()}`
+    "Connection": "Keep-alive",
+    'Content-type': "appication/json"
 });
 const FORMDATA_HEADERS = new Headers({
     'Accept': 'application/json',
-    'Authorization': `Bearer ${Modules.Auth.getSessionToken()}`
+    'Authorization': `Bearer `
 });
 
 export const get = (endpoint, signal=new AbortController().signal) => {
     return new Promise((resolve, reject) => {
         fetch(`${API_URL}${ROOT_PATH}/${endpoint}`, {
-            headers:HEADERS,
-            signal
+            signal,
+            cache: "default"
         })
         .then(response => {
             if (!response.ok) {

@@ -27,11 +27,18 @@ export function Commande(props) {
     let [telephone, setTelephone] = useState("");
     let [password, setPassword] = useState("");
     let [cPassword, setCpassword] = useState("");
+    let [nomEntreprise, setNomEntreprise] = useState("");
+    let [registreCommerce, setRegistreCommerce] = useState("");
+    let [dfe, setDfe] = useState("");
     let [userId, setUserId] = useState("");
     let [isLoading, setIsLoading] = useState(false);
     let [isUrgent, setIsUrgent] = useState(false);
+    let [isEntreprise, setIsEntreprise] = useState(false);
 
     let state = {
+        nomEntreprise,
+        registreCommerce,
+        dfe,
         sousCategories,
         prestations,
         serviceId,
@@ -48,9 +55,13 @@ export function Commande(props) {
         isLoading,
         hasAccount,
         categorie,
-        isUrgent
+        isUrgent,
+        isEntreprise
     };
     let method = {
+        setNomEntreprise,
+        setRegistreCommerce,
+        setDfe,
         setPrestationId,
         setPrestations,
         setServices,
@@ -122,7 +133,9 @@ export function Commande(props) {
         event.preventDefault();
 
         if (step === 1 ) {
-            if (!serviceId || !lieu || !quantite) return alert("Certains champs n'ont pas été remplis !");
+            if (!serviceId || !lieu || !quantite) 
+                return alert("Certains champs n'ont pas été remplis !");
+
             setStep(2);
         }
     }
@@ -139,7 +152,8 @@ export function Commande(props) {
                 'type': userType
             };
 
-            if (password !== cPassword) return alert('Les mots de passe ne correspondent pas !');
+            if (password !== cPassword) 
+                return alert('Les mots de passe ne correspondent pas !');
 
             setIsLoading(true);
             Services.Auth.register(JSON.stringify(payload), abortController.signal)
@@ -198,23 +212,27 @@ export function Commande(props) {
 
     useEffect(() => {
         if (searchParams.get('service_id') && searchParams.get('lieu') && searchParams.get('quantite')) {
-            setServiceId(searchParams.get('service_id'))
-            setLieu(searchParams.get('lieu'))
-            setQuantite(searchParams.get('quantite'))
-            setIsUrgent(true)
-            setStep(2)
+            if (searchParams.get('is_entreprise')) setIsEntreprise(true);
+
+            setServiceId(searchParams.get('service_id'));
+            setLieu(searchParams.get('lieu'));
+            setQuantite(searchParams.get('quantite'));
+            setIsUrgent(true);
+            setStep(2);
+
             Services.Service.getById(searchParams.get('service_id'))
             .then(result => setServices([result.data]))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
         }
 
         if (params.id) {
-            Services.Categorie.getById(params.id, abortController.signal)
-            .then(result => setCategorie(result.data))
-            .catch(err => console.log(err))
             Services.Categorie.getAllSousCategorie(params.id, abortController.signal)
-            .then(result => setSousCategories(result.data))
-            .catch(err => console.log(err));
+            .then(result => {
+                setSousCategories(result.data)
+                Services.Categorie.getById(params.id, abortController.signal)
+                .then(result => setCategorie(result.data))
+                .catch(err => console.log(err))
+            }).catch(err => console.log(err));
         }
 
         return () => {

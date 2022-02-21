@@ -5,26 +5,10 @@ import { Services } from '../services';
 export function DepannageRapideForm(props) {
     const abortController = new AbortController();
 
-    const [categories, setCategories] = useState([]);
     const [sousCategories, setSousCategories] = useState([]);
     const [prestations, setPrestations] = useState([]);
     const [services, setServices] = useState([]);
     const [serviceId, setServiceId] = useState("");
-
-    useEffect(() => {
-        if (categories.length > 0) 
-            return setCategories(categories);
-
-        Services.Categorie.getAll(abortController.signal)
-        .then(result => setCategories(result.data))
-        .catch(err => console.log(err));
-
-        return () => {
-            abortController.abort()
-        }
-
-    }, [categories, setCategories, props]);
-    
 
     function handleCategorieChange(event) {
         event.preventDefault();
@@ -75,10 +59,10 @@ export function DepannageRapideForm(props) {
     }
 
     function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault();        
         
-        if (!event.target.form.quantite.value || event.target.form.lieu.value === "" || 
-        !serviceId || serviceId === "") 
+        if (event.target.form.quantite.value === "" || !serviceId || 
+        event.target.form.lieu.value === "") 
             return alert("Vous devez remplir tous champs");
 
         event.target.form.submit();
@@ -91,7 +75,7 @@ export function DepannageRapideForm(props) {
                 <div className="select-group">
                     <select required onChange={handleCategorieChange}>
                         <option>Choisissez une categorie</option>
-                        {categories.map((categorie, index) => {
+                        {props.categories.map((categorie, index) => {
                             return (
                                 <option value={categorie.id} key={index}>
                                     {categorie.nom}
@@ -103,7 +87,7 @@ export function DepannageRapideForm(props) {
 
                 <div className="select-group">
                     <select required onChange={handleSousCategorieChange}>
-                        <option defaultValue={""}>Choisissez une sous categorie</option>
+                        <option value="">Choisissez une sous categorie</option>
                         {sousCategories.map((sousCategorie, index) => {
                             return (
                                 <option value={sousCategorie.id} key={index}>
@@ -116,7 +100,7 @@ export function DepannageRapideForm(props) {
 
                 <div className="select-group">
                     <select required onChange={handlePrestationChange}>
-                        <option defaultValue={""}>Choisissez une prestation</option>
+                        <option value="">Choisissez une prestation</option>
                         {prestations.map((prestation, index) => {
                             return (
                                 <option value={prestation.id} key={index}>
@@ -129,7 +113,7 @@ export function DepannageRapideForm(props) {
 
                 <div className="select-group">
                     <select required name="service_id" onChange={(event) => setServiceId(event.target.value)}>
-                        <option defaultValue={""}>Choisissez un service</option>
+                        <option value="">Choisissez un service</option>
                         {services.map((service, index) => {
                             return (
                                 <option value={service.id} key={index}>
@@ -146,6 +130,9 @@ export function DepannageRapideForm(props) {
                 
                 <div className="form-group">
                     <input required type="text" name="lieu" placeholder="Adressse de dépannage" />
+                    {props.title && props.title.includes('entreprise') ? 
+                    <input type="hidden" name="is_entreprise" value={true}/> 
+                : null} 
                 </div>
                 <button type="submit" onClick={handleSubmit}>
                     VALIDER

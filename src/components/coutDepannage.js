@@ -24,7 +24,7 @@ export function CoutDepannage({state}) {
                     </div>
                     <div>{service.description}</div>
                     <div style={{fontWeight: "bolder", color: "red", marginTop: "20px"}}>NB: Le montant 
-                    affiché représente uniquement le coût de la prestation. Il peut être modifié après 
+                    affiché représente uniquement le coût de la main d'oeuvre. Il peut être modifié après 
                     une visite sur les lieux et fonction des réalités du terrain.</div>
                 </span>
             )
