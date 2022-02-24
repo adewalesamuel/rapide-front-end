@@ -32,10 +32,10 @@ export function Footer(props) {
 
                     <div className="footer-group">
                         <h4 className="footer-title">Nos <span className="orange"> Contacts</span></h4>
-                        <Link to="#">2021 - Rapide Reparation, <br/> Tous droits reserves.</Link>
+                        <Link to="#">2021 - Rapide Reparation, <br/> Tous droits réservés.</Link>
                         <Link to="#">Email: info@rapide-reparation.ci</Link>
                         {/* <Link to="#">Call Center: +225 25 22 40 78 90</Link> */}
-                        <Link to="#">Telephone: +225 25 22 01 61 26</Link>
+                        <Link to="#">Téléphone: +225 25 22 01 61 26</Link>
                     </div>
                 </div>
             </footer>

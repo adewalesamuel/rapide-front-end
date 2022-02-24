@@ -14,6 +14,7 @@ export function Presentation(props) {
         const abortController = new AbortController();
 
         if (categories.length > 0) return;
+        
         Services.Categorie.getAll(abortController.signal)
         .then(result => setCategories(result.data))
         .catch(err => console.log(err));
@@ -46,7 +47,7 @@ export function Presentation(props) {
                 <div className="services">
                     <h1>Qui Sommes Nous ?</h1>
 
-                    <p>Créé en 2020, Rapide Réparation est une entreprise digitale de réparation spécialisée   en Plomberie, Electricité, étanchéité, maçonnerie, menuiserie, froid et climatisation, soudure, carrelage, peinture, aménagement, déménagement, nettoyage, jardinage, désinfection dans les locaux professionnels et particuliers. Cette entreprise est née de la volonté de facilité l’accès aux services liés à la remise en état de vos bureaux et appartements. <br /><br />
+                    <p>Créée en 2020, Rapide Réparation est une entreprise digitale de réparation spécialisée   en Plomberie, Electricité, étanchéité, maçonnerie, menuiserie, froid et climatisation, soudure, carrelage, peinture, aménagement, déménagement, nettoyage, jardinage, désinfection dans les locaux professionnels et particuliers. Cette entreprise est née de la volonté de faciliter l’accès aux services liés à la remise en état de vos bureaux et appartements. <br /><br />
                             Rapide Réparation offre la possibilité à ses clients et partenaires de bénéficier de services de qualités à travers ses différentes plateformes (site internet, Application mobile, Réseaux sociaux) 7j/7j.
                             Plus d’une centaine de Jeunes professionnels, expérimentés, dynamiques et bien encadrés répondent efficacement à tous vos besoins quotidiens en matière de réparation.<br /><br />
                             Nous nous appuyons sur un pôle d’ingénieurs et techniciens issus des écoles locales et internationales et sur un réseau de partenaires local. C’est avec ces compétences que nous relevons les défis sur des projets conséquents en respectant les délais. 
@@ -62,7 +63,7 @@ export function Presentation(props) {
 
                     <div className="introduction">
                         <h1>Nos Services</h1>
-                        <p>Confier vos travaux de réparation domestique à <br /> professionnel qui a de l’expérience.
+                        <p>Confiez vos travaux de réparation domestique à <br /> des professionnels.
                         </p>
                     </div>
             

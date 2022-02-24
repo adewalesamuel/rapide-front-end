@@ -26,8 +26,7 @@ function Inscription(props) {
     function handleUserFormSubmit(event) {
         event.preventDefault();
 
-        if (type === "entreprise" && (!nomEntreprise ||
-            !registreCommerce || !dfe))
+        if (type === "entreprise" && (!nomEntreprise || !registreCommerce || !dfe))
                 return alert("Veuillez remplir tout les champs");
 
         const payload = {
@@ -93,9 +92,9 @@ function Inscription(props) {
                                 onChange={event => setDfe(event.target.value)} placeholder="Numéro contribuable" />
                             </> : null
                             }
-                            <input type="password"autoComplete="on" name="password" required value={password} 
+                            <input type="password"autoComplete="on" name="password" minLength={6} required value={password} 
                             onChange={event => setPassword(event.target.value)} placeholder="Definissez votre mot de passe" />
-                            <input type="password"autoComplete="on" name="cpassword" required value={cPassword} 
+                            <input type="password"autoComplete="on" name="cpassword" minLength={6} required value={cPassword} 
                             onChange={event => setCpassword(event.target.value)} placeholder="Retapez votre mot de passe" />
                             <input type="text" name="pc_code" value={pcCode} 
                             onChange={event => setPcCode(event.target.value)} placeholder="PC Code (optionnel)" />
@@ -119,7 +118,7 @@ function Inscription(props) {
                         <p style={{color: '#968A8A'}}>Vous pouvez désormais passer commande</p>   
             
                         <form action="#">
-                            <img className="checkbox" style={{margin: '30px auto', width: "100px", height: 'auto'}} 
+                            <img className="checkbox2" style={{margin: '30px auto', width: "100px", height: 'auto', display: 'block'}} 
                             src={checkImg} alt=""/>
             
                             <div className="validate" style={{gridColumn: '1/3', display: "flex", alignItems: 'center', 

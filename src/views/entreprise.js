@@ -31,7 +31,7 @@ export function Entreprise(props) {
         <> 
         <section className='block'>
             <div className="entre-text">
-                <h1>Nous offrons les meilleurs services a domicile.</h1>
+                <h1>Nous offrons les meilleurs services à domicile.</h1>
                 <p>Un dépannage, c’est une affaire de confiance : le travail doit être bien fait, sans mauvaise surprise à la fin, ni les jours suivants.</p>
 
                 <Link className="btn" to="/presentation">QUI SOMMES NOUS ?</Link>
@@ -77,7 +77,7 @@ export function Entreprise(props) {
             
             <h1>Commander en trois étapes</h1>
             
-            <p>Voici en quelque étapes comment notre application fonctionne.</p>
+            <p>Voici en quelques étapes comment notre application fonctionne.</p>
 
             <div className="steps">
 
@@ -136,7 +136,7 @@ export function Entreprise(props) {
                 <div className="inner-content">
                     <h1 className="heading-title">Télecharger notre Plaquette</h1>
                     
-                    <p>Pour en savoir plus sur Rapide Réparation, sur grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
+                    <p>Pour en savoir plus sur Rapide Réparation, sur notre grille tarifaire, sur nos services et sur notre mode de fonctionnement, nous vous conseillons de telecharger notre librairie digitale.</p>
 
                     <a className="links" to="#" style={{color: "#2a265b"}}
                     href="/plaquette-presentation.PDF" download={"Plaquette de presenation"}>

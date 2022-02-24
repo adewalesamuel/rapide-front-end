@@ -12,7 +12,7 @@ function App() {
     window.document.head.insertBefore(
       document.createComment("by samueladewale"),
       document.head.firstChild);
-  })
+  });
   return (
     <BrowserRouter>
       <Components.Header />

@@ -10,8 +10,7 @@ export function CommandeFin({state, method}) {
             <p style={{color: '#968A8A'}}>Vous serez bientôt contacté par nos équipes.</p>   
 
             <form action="#">
-                <img className="checkbox" style={{marginTop: '30px', width: "100px", height: 'auto',
-                gridColumn: "1/3"}} 
+                <img className="checkbox" style={{marginTop: '30px', width: "100px", height: 'auto'}} 
                 src={checkImg} alt=""/>
 
                 <div className="validate" style={{gridColumn: '1/3', display: "flex", alignItems: 'center', 

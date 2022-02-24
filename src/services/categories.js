@@ -5,12 +5,6 @@ const  ENPOINTS = {
 };
 
 const getAll = signal => {
-    // fetch("http://localhost:8000/api/categories", {
-    //     headers: {'Accept': 'application/json', 'Content-type': 'application/json'},
-    //     cache:"force-cache"
-    // })
-    // .then(response => response.json())
-    // .then(result => {console.log(result); return result})
     return get(ENPOINTS.CATEGORIE, signal);
 }
 

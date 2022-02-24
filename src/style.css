@@ -18,7 +18,7 @@ a {
 }
 
 select {
-  background-color: inherit !important;
+  background-color: #f0f0f0 !important;
 }
 /* TOPBAR - MENU */
 
@@ -2354,7 +2354,7 @@ span.checkbox  {
 }
 
 form > img.checkbox {
-  left: 50%;
+  left: 100%;
   transform: translateX(-50%);
   position: relative;
   margin-right: 30px;
@@ -3064,6 +3064,15 @@ nav#nav.nav {
     justify-content: space-around;
   }
 
+  form > img.checkbox {
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin-right: 30px;
+    width: 180px;
+    height: auto;
+  }
+
   .bloc-icon {
     display: flex;
     justify-content: center;
@@ -3445,7 +3454,7 @@ nav#nav.nav {
   }
 
   div.formulary > div.coordinates > form {
-    width: 75%;
+    width: 100%;
   }
 
   div.formulary > div.coordinates > form > span {
@@ -3498,5 +3507,10 @@ nav#nav.nav {
     color: #ef8123;
     bottom: 35px;
     font-size: 18px;
+  }
+
+  .coordinates > form > select, .coordinates > form > input {
+    width: 100%;
+    box-sizing: border-box;
   }
 }

@@ -45,7 +45,7 @@ export function Accueil(props) {
         <>
             <header>
                 <div className="heading-info">
-                    <h1>Nous offrons les meilleurs services a domicile.</h1>
+                    <h1>Nous offrons les meilleurs services à domicile.</h1>
                     <div className="stores">
                         <img src={imgPlaystore} alt="" />
                         <img src={imgAppstore} alt="" />
@@ -80,7 +80,7 @@ export function Accueil(props) {
             <div className="bref-desc">
                 <h1>Qui sommes nous ?</h1>
                 
-                <p>Cette entreprise est née de la volonté de facilité l’accès aux services liés à la remise en état de vos bureaux et appartements. Rapide Réparation offre la possibilité à ses clients et partenaires de bénéficier de services de qualités à travers ses différentes plateformes (site internet, Application mobile, Réseaux sociaux) 7j/7j.</p>
+                <p>Cette entreprise est née de la volonté de faciliter l’accès aux services liés à la remise en état de vos bureaux et appartements. Rapide Réparation offre la possibilité à ses clients et partenaires de bénéficier de services de qualités à travers ses différentes plateformes (site internet, Application mobile, Réseaux sociaux) 7j/7j.</p>
 
                 <Link to="/presentation">VOIR PRESENTATION</Link>
             </div>
@@ -89,14 +89,14 @@ export function Accueil(props) {
                 <div className="mobile-app">
                     <div className="heading-info">
                         <h2 className="bold">
-                            Télécharger l'application mobile<br/>
+                            Téléchargez l'application mobile<br/>
                             <span className="rapide">R</span>apide
                             <span className="rapide">R</span>éparation
                         </h2>
 
                         <h2 className="normal">
-                            pour une meilleures experience, nous<br/>
-                            avons pensé a tout.
+                            pour une meilleure experience, nous<br/>
+                            avons pensé à tout.
                         </h2>
 
                         <div className="stores">

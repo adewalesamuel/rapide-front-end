@@ -7,7 +7,7 @@ const ROOT_PATH  = '/api';
 const HEADERS = new Headers({
     'Accept': 'application/json',
     "Connection": "Keep-alive",
-    'Content-type': "appication/json"
+    'Content-type': "application/json"
 });
 const FORMDATA_HEADERS = new Headers({
     'Accept': 'application/json',
