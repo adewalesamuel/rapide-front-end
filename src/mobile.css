@@ -1,0 +1,250 @@
+@media screen and (min-width: 200px) and (max-width: 992px) and (max-width: 768px) and (max-width: 600px) {
+    .boxService-mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      padding: 40px auto;
+      align-items: start;
+      justify-content: center;
+      /* position: fixed; */
+    }
+  
+    div.circle-container > img {
+      width: 100%;
+      position: relative;
+    }
+  
+    div.circle-container h1 {
+      font-size: 20px;
+      color: #2a265b;
+      font-weight: 700;
+      right: 5em;
+      position: relative;
+    }
+  
+    div.titleService h1 {
+      color: #071454;
+      font-weight: 900;
+      font-size: 20px;
+      position: relative;
+      top: 5.3em;
+      left: -6em;
+    }
+  
+    .circle-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      align-content: center;
+    }
+  
+    div.circle-box {
+      max-height: 320px;
+      position: relative;
+      bottom: 1em;
+    }
+  
+    .circle1,
+    .circle2,
+    .circle3,
+    .circle4,
+    .circle5,
+    .circle6,
+    .circle7 {
+      width: 140px;
+      height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      align-items: center;
+    }
+  
+    .circle2 {
+      position: relative;
+      left: 7em;
+      bottom: 4em;
+    }
+  
+    .circle3 {
+      position: relative;
+      bottom: 12.7em;
+      right: 7.1em;
+    }
+  
+    .circle4 {
+      position: relative;
+      bottom: 12.7em;
+      right: 7.1em;
+    }
+  
+    .circle5 {
+      position: relative;
+      bottom: 21.5em;
+      left: 6.9em;
+    }
+  
+    .circle6 {
+      position: relative;
+      bottom: 34.7em;
+      right: 0.1em;
+    }
+  
+    .circle7 {
+      position: relative;
+      bottom: 34.7em;
+      right: 0.1em;
+    }
+  
+    .circle1 img,
+    .circle2 img,
+    .circle5 img,
+    .circle6 img,
+    .circle7 img {
+      width: 90px;
+    }
+  
+    .circle1 img {
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle2 img {
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 3s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle3 img {
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 5s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle4 img {
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle5 img {
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 6s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle6 img {
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 6s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle7 img {
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 7s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle3 img,
+    .circle4 img {
+      width: 90px !important;
+      transform: scale(0.9);
+      animation: pulse-service 2s;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+    }
+  
+    .circle1 h2,
+    .circle2 h2,
+    .circle3 h2,
+    .circle4 h2,
+    .circle5 h2,
+    .circle6 h2,
+    .circle7 h2 {
+      font-size: 12px;
+      color: #2a285a;
+      font-weight: 800;
+      text-align: center;
+    }
+  
+    @keyframes pulse-service {
+      0% {
+        transform: scale(0.9);
+        box-shadow: #2a265b;
+      }
+  
+      70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+      }
+  
+      100% {
+        transform: scale(0.9);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+  
+    .tab-nav-container {
+      background-color: rgb(226, 226, 226);
+      border-radius: 20px;
+      box-shadow: 1px 1px 8px 2px rgb(0 0 0 / 20%);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: fixed;
+      bottom: 0px;
+    }
+  
+    .tab {
+      background-color: rgb(226, 226, 226);
+      border-radius: 50px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      margin: 0 5px;
+      transition: background 0.4s linear;
+    }
+    .tab img {
+      width: 30px;
+    }
+    .tab p {
+      font-weight: bold;
+      overflow: hidden;
+      max-width: 0;
+    }
+    .tab.active p {
+      margin-left: 10px;
+      max-width: 100px;
+      transition: max-width 0.4s linear;
+    }
+    .tab.active.purple {
+      background-color: #2a285a2e;
+      color: #2a285a;
+    }
+    .tab.active.pink {
+      background-color: rgba(201, 55, 157, 0.2);
+      color: rgba(201, 55, 157, 1);
+    }
+    .tab.active.yellow {
+      background-color: rgba(230, 169, 25, 0.2);
+      color: rgba(230, 169, 25, 1);
+    }
+    .tab.active.teal {
+      background-color: rgba(28, 150, 162, 0.2);
+      color: rgba(28, 150, 162, 1);
+    }
+  }
+  

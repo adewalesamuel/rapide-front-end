@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import checkImg from '../img/check.png'
+import { useLocation } from 'react-router-dom';
 
 export function CommandeFin({state, method}) {
+    const location = useLocation();
     return (
         <>
             <div className="">
@@ -15,7 +17,7 @@ export function CommandeFin({state, method}) {
 
                 <div className="validate" style={{gridColumn: '1/3', display: "flex", alignItems: 'center', 
                 justifyContent:'center'}}>
-                    <Link to="/">
+                    <Link to={location.pathname.includes('mobile') ? "/mobile/" : "/"}>
                         <button type="submit" style={{backgroundColor: '#ef8123', border: "none", color: '#fff', 
                         borderRadius:'5px', fontSize: '20px', padding:'20px', cursor:'pointer'}}>
                             Revenir à l'accueil

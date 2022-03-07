@@ -7,9 +7,10 @@ import { Contact } from "./contact";
 import Inscription from "./inscription";
 import Conditions from "./conditions";
 import DepanageUrgence from "./depanageUrgence";
+import { AccueilMobile } from "./accueilMobile";
 
 export const Views = {
-Accueil,
+    Accueil,
     Presentation,
     Entreprise,
     Services,
@@ -17,5 +18,8 @@ Accueil,
     Contact,
     Inscription,
     Conditions,
-    DepanageUrgence
+    DepanageUrgence,
+    Mobile: {
+        Accueil: AccueilMobile
+    }
 }

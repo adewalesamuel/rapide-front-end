@@ -13,11 +13,21 @@ export function TopBar(props) {
             <span className="info-2"><img src={imgChat}  alt=""/> Disponibilité 24h/7j</span>
             <span className="info-3"><img src={imgMarker}  alt=""/> Cocody Riviera Golf</span>
             <span className="info-4">
-                <img src={imgFacebook} alt="" />
-                <img src={imgLinkedin} alt="" />
-                <img src={imgTwitter} alt="" />
-                <img src={imgInstagram} alt="" />
-                <img src={imgYoutube} alt="" />
+                <a href="https://www.facebook.com/Rapide-R%C3%A9paration-111599908121056" target={"_blank"} rel="noreferrer">
+                    <img src={imgFacebook} alt="" />
+                </a>
+                <a href="https://www.linkedin.com/company/rapide-reparation/about/?viewAsMember=true" target={"_blank"} rel="noreferrer">
+                    <img src={imgLinkedin} alt="" />
+                </a>
+                <a href="https://twitter.com/RAPIDREPARATION" target={"_blank"} rel="noreferrer">
+                    <img src={imgTwitter} alt="" />
+                </a>
+                {/* <a href="" target={"_blank"} rel="noreferrer">
+                    <img src={imgInstagram} alt="" />
+                </a> */}
+                <a href="https://www.youtube.com/channel/UCaUqVM-hYK2s50NMCwB64mg" target={"_blank"} rel="noreferrer">
+                    <img src={imgYoutube} alt="" />
+                </a>
             </span>
         </div>
     )

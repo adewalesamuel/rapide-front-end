@@ -45,6 +45,12 @@ select {
   color: #ffffff;
 }
 
+/* .topbar-menu > span > a {
+  width: 20px;
+  line-height: 1;
+  border: 1px  solid red;
+} */
+
 span.info-1 {
   width: 35%;
   background-color: #ef8123;
@@ -72,8 +78,13 @@ span.info-4 {
   justify-content: space-evenly;
 }
 
-span.info-4 > img {
-  /* height: 10px; */
+span.info-4 > a {
+  line-height: 0.9;
+  width: 20px;
+}
+
+span.info-4 > a > img {
+  width: 100%;
 }
 
 /* navbar-navigation */

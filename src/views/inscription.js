@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { Services } from '../services';
 import { Forms } from '../_helpers/forms';
 
+import { useLocation } from 'react-router-dom';
+
 import checkImg from '../img/check.png';
 
 
 function Inscription(props) {
+    const location = useLocation();
     const formElement = useRef();
     const abortController = new AbortController();
     const userType = "client";
@@ -41,6 +44,10 @@ function Inscription(props) {
             'dfe': dfe
         };
 
+        if (telephone.length !== 10) return alert("Le numéro de téléphone doit contenir 10 caractères !");
+        if (password.length < 8) return alert("Le mot de passe doit avoir au moins 8 catractères !");
+        if (!Array.from(password).some(str => Number.isInteger(Number(str)))) 
+            return alert("Le mot de passe doit contnir au moins un chiffre")
         if (password !== cPassword) return alert('Les mots de passe ne correspondent pas !');
 
         setIsLoading(true);
@@ -123,7 +130,7 @@ function Inscription(props) {
             
                             <div className="validate" style={{gridColumn: '1/3', display: "flex", alignItems: 'center', 
                             justifyContent:'center'}}>
-                                <Link to="/services">
+                                <Link to={location.pathname.includes('mobile') ? "/mobile/" : "/"}>
                                     <button type="submit" style={{backgroundColor: '#ef8123', border: "none", color: '#fff', 
                                     borderRadius:'5px', fontSize: '20px', padding:'20px', cursor:'pointer'}}>
                                         Voir nos services
