@@ -109,12 +109,14 @@
   
     .circle1 img {
       transform: scale(0.9);
+      width: 130px;
       animation: pulse-service 2s;
       animation-delay: 0s;
       animation-iteration-count: infinite;
     }
   
     .circle2 img {
+      width: 130px;
       transform: scale(0.9);
       animation: pulse-service 2s;
       animation-delay: 3s;
@@ -150,6 +152,7 @@
     }
   
     .circle7 img {
+      width: 130px;
       transform: scale(0.9);
       animation: pulse-service 2s;
       animation-delay: 7s;
@@ -158,7 +161,7 @@
   
     .circle3 img,
     .circle4 img {
-      width: 90px !important;
+      width: 130px;
       transform: scale(0.9);
       animation: pulse-service 2s;
       animation-delay: 0s;
@@ -231,8 +234,8 @@
       transition: max-width 0.4s linear;
     }
     .tab.active.purple {
-      background-color: #2a285a2e;
-      color: #2a285a;
+      background-color: #ef8123;
+      color: white;
     }
     .tab.active.pink {
       background-color: rgba(201, 55, 157, 0.2);

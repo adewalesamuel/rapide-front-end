@@ -6,6 +6,8 @@ import shop from '../img/shop.png';
 import support from '../img/support.png';
 import user from '../img/user.png';
 
+let chatBtn = null;
+
 export function FooterMobile(props) {
     const navigate = useNavigate();
 
@@ -23,6 +25,19 @@ export function FooterMobile(props) {
             clickedTab.addEventListener('click', onTabClick);
         });
 
+        const timer = setInterval(() => {
+            if (document.getElementsByClassName('cc-unoo')[0]) {
+
+                chatBtn = document.getElementsByClassName('cc-unoo')[0];
+
+                if (window.location.pathname.includes('mobile'))
+                    chatBtn.style.transform = 'translateX(100px)';
+
+                clearInterval(timer)
+            }
+                
+        }, 100)
+
         return () => {
             tabs.forEach((clickedTab)=>{
                 clickedTab.removeEventListener('click', onTabClick);
@@ -39,7 +54,10 @@ export function FooterMobile(props) {
                 <img src={shop} alt="shop" />
                 <p>Marketplace</p>
             </div>
-            <div className="tab purple" onClick={event => {navigate("/mobile/")}}>
+            <div className="tab purple" onClick={event => {
+                chatBtn.click();
+                navigate("/mobile/");
+                }}>
             <img src={support} alt="support" />
                 <p>Support</p>
             </div>
