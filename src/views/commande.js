@@ -180,8 +180,19 @@ export function Commande(props) {
                 setStep(3);
             })
             .catch(err => {
+                let message = "Une erreure est survenue. Veuillez réessayer!";
+
+                switch(err.status) {
+                    case 404:
+                        message = "Nom d'utilisateur ou mot de passe incorrect !";
+                        break;
+                    default:
+                        break;
+                        
+                }
+
                 setIsLoading(false);
-                alert("Une erreur est survenue. Veuillez réessayer");
+                alert(message);
             });
         }
     }
