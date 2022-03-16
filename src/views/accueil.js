@@ -1,7 +1,8 @@
 import imgPlaystore from '../img/playstore.png'
 import imgAppstore from '../img/appstore.png'
-import imgMain from '../img/services/11zon_cropped-4.png'
 import imgMobile2 from '../img/mobile2.png'
+import imgMain from '../img/services/11zon_cropped-4.png'
+import downloadImg from '../img/download-app.jpg'
 import { Link } from 'react-router-dom'
 import {useState, useEffect} from 'react';
 import { Services } from '../services';
@@ -14,11 +15,24 @@ export function Accueil(props) {
     const navigate = useNavigate()
 
     const [categories, setCategories] = useState([]);
+    const [hasDowloaded, setHasDownloaded] = useState(false);
+    const storeHasDowloaded = () => {
+        if ('localStorage' in window) {
+            window.localStorage.setItem("hasDownloaded", true);
+            setHasDownloaded(true);
+        }
+    }
 
     useEffect(() => {
       Services.Categorie.getAll(abortController.signal)
       .then(result => setCategories(result.data))
       .catch(err => console.log(err));
+
+      if ('localStorage' in window) {
+          if (window.localStorage.getItem("hasDownloaded")) {
+              setHasDownloaded(true);
+          }
+      }
 
       return () => {
           abortController.abort()
@@ -43,6 +57,25 @@ export function Accueil(props) {
     
     return (
         <>
+            {hasDowloaded ? null :
+            <div className="download-app">
+            <span className='close' onClick={() => setHasDownloaded(true)}>&times;</span>
+            <div className='content'>
+                <img className="download-img" src={downloadImg} alt="rapide reparation"/>
+                <div className='download-txt'>
+                    <h4 className='download-title'>Commander dans l'application</h4>
+                    <div className='download-desc' style={{fontSize:"14px"}}>
+                        Utiliser notre application gratuite sur 
+                        playstore pour commander plus simplement nos services.
+                    </div>
+                </div>
+            </div>
+            <a className="download-btn" href="https://play.google.com/store/apps/details?id=com.davekabiyesis.rradnroid"
+            onClick={() => storeHasDowloaded()}>
+                Téléchargez l'application
+            </a>
+            </div> 
+            }
             <header>
                 <div className="heading-info">
                     <h1>Nous offrons les meilleurs services à domicile.</h1>

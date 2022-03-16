@@ -76,7 +76,7 @@ export function CommandeForm({state, method}) {
                     : null
                 }
 
-                <textarea placeholder="Exprimer brièvement votre bésoin...." name="" id="" value={state.description}
+                <textarea placeholder="Exprimer brièvement votre besoin...." name="" id="" value={state.description}
                 style={{gridColumn: "1/3", backgroundColor: "#f0f0f0", borderRadius: "5px", borderColor: "#E0E0E0", 
                 padding: "4px 7px", fontFamily: "Gothic", fontSize: '1rem'}} cols="30" rows="10" 
                 onChange={(event) => method.setDescription(event.target.value)}></textarea>

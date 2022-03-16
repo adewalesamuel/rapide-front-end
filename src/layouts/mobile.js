@@ -6,7 +6,8 @@ import '../mobile.css';
 
 export default function MobileLayout(props) {
     return (
-        <>
+        <>  
+            <Components.Mobile.Header />
             <Routes>
                 <Route exact path='/contact' element={<Views.Contact />} />
                 <Route exact path='/presentation' element={<Views.Presentation />} />

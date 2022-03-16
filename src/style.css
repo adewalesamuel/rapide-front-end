@@ -22,6 +22,55 @@ select {
 }
 /* TOPBAR - MENU */
 
+.download-app {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px 5px 20px 16px;
+  background-color: white;
+  z-index: 10;
+  display: none;
+}
+
+.download-app .close {
+  position: absolute;
+  padding: 5px;
+  top: 0;
+  font-size: 32px;
+  right: 10px;
+}
+
+.download-app .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download-app .download-img {
+  width: 27%;
+}
+
+.download-app .download-txt {
+  padding-left: 10px;
+}
+
+.download-app .download-title {
+  margin: 5px 0;
+}
+
+.download-app .download-btn {
+  padding: 10px 8px;
+  color: white;
+  border-radius: 100px;
+  font-weight: bolder;
+  display: block;
+  text-align: center;
+  margin: 10px auto 0;
+  width: 280px;
+  background-color: orange;
+}
+
+
 .topbar-menu {
   display: flex;
   flex-direction: row;

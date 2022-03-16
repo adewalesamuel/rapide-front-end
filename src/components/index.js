@@ -8,6 +8,7 @@ import { DepannageRapideForm } from "./depannageRapideForm";
 import { CoutDepannage } from "./coutDepannage";
 import { ServiceBox } from "./serviceBox";
 import { FooterMobile } from "./footerMobile";
+import { HeaderMobile } from "./headerMobile";
 
 export const Components = {
     Header,
@@ -20,6 +21,7 @@ export const Components = {
     DepannageRapideForm,
     ServiceBox,
     Mobile: {
-        Footer: FooterMobile
+        Footer: FooterMobile,
+        Header: HeaderMobile
     }
 }

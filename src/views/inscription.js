@@ -25,6 +25,12 @@ function Inscription(props) {
     const [pcCode, setPcCode] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const [hasSignedUp, setHasSignedUp] = useState(false);
+    const [hasAcceptedTerms, setHasAcceptedTerms] = useState(false);
+
+    function toggleHasAcceptedTerms() {
+        setHasAcceptedTerms(!hasAcceptedTerms);
+        console.log(hasAcceptedTerms)
+    }
 
     function handleUserFormSubmit(event) {
         event.preventDefault();
@@ -45,10 +51,9 @@ function Inscription(props) {
         };
 
         if (telephone.length !== 10) return alert("Le numéro de téléphone doit contenir 10 caractères !");
-        if (password.length < 8) return alert("Le mot de passe doit avoir au moins 8 catractères !");
-        if (!Array.from(password).some(str => Number.isInteger(Number(str)))) 
-            return alert("Le mot de passe doit contnir au moins un chiffre")
+        if (password.length < 6) return alert("Le mot de passe doit avoir au moins 6 catractères !");
         if (password !== cPassword) return alert('Les mots de passe ne correspondent pas !');
+        if (!hasAcceptedTerms) return alert("Vous devez accepter les termes et conditions d'utilisation !");
 
         setIsLoading(true);
         Services.Auth.register(JSON.stringify(payload), abortController.signal)
@@ -103,8 +108,15 @@ function Inscription(props) {
                             onChange={event => setPassword(event.target.value)} placeholder="Definissez votre mot de passe" />
                             <input type="password"autoComplete="on" name="cpassword" minLength={6} required value={cPassword} 
                             onChange={event => setCpassword(event.target.value)} placeholder="Retapez votre mot de passe" />
-                            <input type="text" name="pc_code" value={pcCode} 
+                            <input type="text" name="pc_code" value={pcCode}
                             onChange={event => setPcCode(event.target.value)} placeholder="PC Code (optionnel)" />
+                            <div style={{display:"flex", justifyContent: 'flex-start', marginTop: "20px"}}>
+                                <input type="checkbox" name="has_accepted_terms" value={hasAcceptedTerms} checked={hasAcceptedTerms}
+                                style={{width: "30px", marginTop: "0", marginRight: "20px"}}
+                                onChange={event => toggleHasAcceptedTerms()}/>
+                                <small>Veuillez accepter les termes et conditions d'utilisation</small>
+                            </div>
+
                             <div className="validate" style={{gridColumn: "1/3", display:"flex", alignItems:"center", 
                             justifyContent:'center', marginTop: "30px"}}>
                                 <button type="submit" style={{backgroundColor: "#2A265B", border:"none", color: "#fff", 
