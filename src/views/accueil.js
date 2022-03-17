@@ -80,7 +80,8 @@ export function Accueil(props) {
                 <div className="heading-info">
                     <h1>Nous offrons les meilleurs services à domicile.</h1>
                     <div className="stores">
-                        <img src={imgPlaystore} alt="" />
+                        <img src={imgPlaystore} alt="" style={{cursor: 'pointer'}} onClick={() => 
+                            window.open("https://play.google.com/store/apps/details?id=com.davekabiyesis.rradnroid")}/>
                         <img src={imgAppstore} alt="" />
                     </div>
                 </div>
@@ -133,7 +134,8 @@ export function Accueil(props) {
                         </h2>
 
                         <div className="stores">
-                            <Link to="#"><img src={imgPlaystore} alt="" /></Link>
+                            <a href="https://play.google.com/store/apps/details?id=com.davekabiyesis.rradnroid" 
+                            target={'_blank'}><img src={imgPlaystore} alt="" /></a>
                             <Link to="#"><img src={imgAppstore} alt="" /></Link>
                         </div>
                     </div>
